@@ -33,8 +33,6 @@ public class MyController {
     }
 
 
-
-
     @Autowired
     private OrderService ordersService;
 
@@ -74,9 +72,6 @@ public class MyController {
     }
 
 
-
-
-
     @Autowired
     private CarService carService;
 
@@ -93,35 +88,34 @@ public class MyController {
     @RequestMapping("/addNewCar")
     public String addNewCar(Model model) {
         Cars car = new Cars();
-        model.addAttribute("car",car);
+        model.addAttribute("car", car);
 
         return "car-info";
     }
 
     @RequestMapping("/saveCar")
-    public String saveCar(@ModelAttribute("car") Cars car){
+    public String saveCar(@ModelAttribute("car") Cars car) {
 
         carService.saveCar(car);
 
         return "redirect:/cars";
     }
+
     @RequestMapping("/updateCar")
-    public String updateCar(@RequestParam("carId") int id, Model model){
+    public String updateCar(@RequestParam("carId") int id, Model model) {
         Cars car = carService.getCar(id);
 
-        model.addAttribute("car",car);
+        model.addAttribute("car", car);
 
         return "car-info";
     }
 
     @RequestMapping("/deleteCar")
-    public String deleteCarButton(@RequestParam("carId") int id){
+    public String deleteCarButton(@RequestParam("carId") int id) {
 
         carService.deleteCar(id);
         return "redirect:/cars";
     }
-
-
 
 
     @RequestMapping("/addNewDriver1")
@@ -138,100 +132,94 @@ public class MyController {
     public String addNewDriver2(Model model, @RequestParam("selectCarId") int id) {
         Drivers driver = new Drivers();
         Cars car = carService.getCar(id);
-        selectedCar=car;
-        model.addAttribute("driver",driver);
+        selectedCar = car;
+        model.addAttribute("driver", driver);
 
         System.out.println(driver);
         return "driver-info";
     }
 
 
-
     @RequestMapping("/saveDriver")
-    public String saveDriver(@ModelAttribute("driver") Drivers driver){
+    public String saveDriver(@ModelAttribute("driver") Drivers driver) {
 
         driver.setDriverCar(selectedCar);
         driverService.saveDriver(driver);
 
         return "redirect:/drivers";
     }
+
     @RequestMapping("/deleteDriver")
-    public String deleteDriver(@RequestParam("driverId") int id){
+    public String deleteDriver(@RequestParam("driverId") int id) {
 
         driverService.deleteDriver(id);
         return "redirect:/drivers";
     }
 
 
-
-
-
     @RequestMapping("/addNewRoute")
     public String addNewRoute(Model model) {
         Routes routes = new Routes();
-        model.addAttribute("route",routes);
-
+        model.addAttribute("route", routes);
         return "route-info";
     }
+
     @RequestMapping("/saveRoute")
-    public String saveRoute(@ModelAttribute("route") Routes routes){
-
+    public String saveRoute(@ModelAttribute("route") Routes routes) {
         routeService.saveRoute(routes);
-
         return "redirect:/routes";
     }
+
     @RequestMapping("/updateRoute")
-    public String updateRoute(@RequestParam("routeId") int id, Model model){
+    public String updateRoute(@RequestParam("routeId") int id, Model model) {
         Routes route = routeService.getRoutes(id);
-
-        model.addAttribute("route",route);
-
+        model.addAttribute("route", route);
         return "route-info";
     }
+
     @RequestMapping("/deleteRoute")
-    public String deleteRoute(@RequestParam("routeId") int id){
+    public String deleteRoute(@RequestParam("routeId") int id) {
 
         routeService.deleteRoute(id);
         return "redirect:/routes";
     }
 
 
-
     @RequestMapping("/addNewDispatcher")
     public String addNewDispatcher(Model model) {
-         Dispatchers dispatchers = new Dispatchers();
-        model.addAttribute("dispatcher",dispatchers);
+        Dispatchers dispatchers = new Dispatchers();
+        model.addAttribute("dispatcher", dispatchers);
 
         return "dispatcher-info";
     }
+
     @RequestMapping("/saveDispatcher")
-    public String saveDispatcher(@ModelAttribute("dispatcher") Dispatchers dispatchers){
+    public String saveDispatcher(@ModelAttribute("dispatcher") Dispatchers dispatchers) {
 
         dispatcherService.saveDispatcher(dispatchers);
 
         return "redirect:/dispatchers";
     }
+
     @RequestMapping("/updateDispatcher")
-    public String updateDispatcher(@RequestParam("dispId") int id, Model model){
+    public String updateDispatcher(@RequestParam("dispId") int id, Model model) {
         Dispatchers dispatchers = dispatcherService.getDispatcher(id);
 
-        model.addAttribute("dispatcher",dispatchers);
+        model.addAttribute("dispatcher", dispatchers);
 
         return "dispatcher-info";
     }
+
     @RequestMapping("/deleteDispatcher")
-    public String deleteDispatcher(@RequestParam("dispId") int id){
+    public String deleteDispatcher(@RequestParam("dispId") int id) {
 
         dispatcherService.deleteDispatcher(id);
         return "redirect:/dispatchers";
     }
 
 
-
-
-
     @RequestMapping("/deleteOrder")
-    public String deleteOrder(@RequestParam("orderId") int id){
+    public String deleteOrder(@RequestParam("orderId") int id) {
 
         ordersService.deleteOrder(id);
         return "redirect:/orders";
