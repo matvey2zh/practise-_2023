@@ -60,9 +60,9 @@
 
 <div class="jumbotron feature">
     <div class="container">
-        <h1>Drivers</h1>
-        <p>On this page you can easily view information about drivers, as well as add new ones.</p>
-        <p><a class="btn btn-default" onclick="window.location.href = 'addNewDriver1'">Add new driver</a></p>
+        <h1>Водители</h1>
+        <p>На этой странице Вы можете увидеть все данные о Водителях так же легко как и изменить информацию о них..</p>
+        <p><a class="btn btn-default" onclick="window.location.href = 'addNewDriver1'">Добавить нового водителя</a></p>
     </div>
 </div>
 
@@ -72,8 +72,8 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Existing drivers</h1>
-            <p>You can change the driver information at any time if it is invalid or delete it.</p>
+            <h1 class="page-header">Существующие Водители</h1>
+            <p>Вы можете изменять или удалять записи в любой момент.</p>
         </div>
     </div>
     <!-- /.row -->
@@ -94,8 +94,8 @@
                 <h3>
                     <a  href="#">${dr.name}</a>
                 </h3>
-                <p><b>Work experience:</b> ${dr.workExperience} years</p>
-                <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Delete</a></p>
+                <p><b>Стаж работы:</b> ${dr.workExperience} years</p>
+                <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
         </c:forEach>
     </div>

@@ -35,19 +35,19 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav">
         <li>
-          <a  onclick="window.location.href = 'orders'">Orders</a>
+          <a  onclick="window.location.href = 'orders'">Заказы</a>
         </li>
-        <li >
-          <a  onclick="window.location.href = 'dispatchers'">Dispatchers</a>
+        <li>
+          <a  onclick="window.location.href = 'dispatchers'">Диспетчеры</a>
         </li>
         <li  class="active">
-          <a  onclick="window.location.href = 'drivers'">Drivers</a>
+          <a  onclick="window.location.href = 'drivers'">Водители</a>
         </li>
         <li>
-          <a  onclick="window.location.href = 'routes'">Routes</a>
+          <a  onclick="window.location.href = 'routes'">Адреса</a>
         </li>
         <li>
-          <a  onclick="window.location.href = 'cars'">Cars</a>
+          <a  onclick="window.location.href = 'cars'">Машины</a>
         </li>
       </ul>
 
@@ -61,8 +61,7 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Add new driver</h1>
-    <p>On this page you can easily add new one.</p>
+    <h1>Добавление нового водителя</h1>
 
   </div>
 </div>
@@ -73,8 +72,8 @@
   <!-- Heading -->
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Main information</h1>
-      <p>Fill information about new driver.</p>
+      <h1 class="page-header">Основная информация</h1>
+      <p>Заполните информацию о новом водителе.</p>
     </div>
   </div>
   <!-- /.row -->
@@ -85,9 +84,9 @@
       <form:form action="saveDriver" modelAttribute="driver">
 
         <form:hidden path="id"/>
-        Name <form:input path="name"/>
+        Имя <form:input path="name"/>
         <br><br>
-        Work Experience <form:input path="workExperience"/>
+        Стаж Работы <form:input path="workExperience"/>
         <br><br>
 
         <input type="submit" value="OK"/>
@@ -105,19 +104,19 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 footer-blurb-item">
-          <h3>Orders</h3>
-          <p>After clicking on the button below, you will be taken to a page where all orders and detailed information about them will be indicated.</p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'orders'">To Orders</a></p>
+          <h3>Диспетчеры</h3>
+          <p>Нажав на кнопку снизу, Вы попадете на страницу с Диспетчерами, где Вы можете добавлять, изменять и удалять записи.</p>
+          <p><a class="btn btn-default" onclick="window.location.href = 'dispatchers'">К Диспетчерам</a></p>
         </div>
         <div class="col-sm-4 footer-blurb-item">
-          <h3>Drivers</h3>
-          <p>After clicking on the button below, you will be taken to a page where all drivers and detailed information about them will be listed. </p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'drivers'">To Drivers</a></p>
+          <h3>Машины</h3>
+          <p>Нажав на кнопку снизу, Вы попадете на страницу с Машинами, где Вы можете добавлять, изменять и удалять записи. </p>
+          <p><a class="btn btn-default" onclick="window.location.href = 'cars'">К Машинам</a></p>
         </div>
         <div class="col-sm-4 footer-blurb-item">
-          <h3>Routes</h3>
-          <p>After clicking on the button below, you will be taken to a page where all routes and detailed information about them will be indicated.</p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'routes'">To Routes</a></p>
+          <h3>Адреса</h3>
+          <p>Нажав на кнопку снизу, Вы попадете на страницу с Адресами, где Вы можете добавлять, изменять и удалять записи.</p>
+          <p><a class="btn btn-default" onclick="window.location.href = 'routes'">К Адресам</a></p>
         </div>
 
       </div>

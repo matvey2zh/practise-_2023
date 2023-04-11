@@ -60,8 +60,8 @@
 
 <div class="jumbotron feature">
     <div class="container">
-        <h1>Orders</h1>
-        <p>On this page you can easily view information about orders, as well as add new ones.</p>
+        <h1>Заказы</h1>
+        <p>На этой странице Вы можете увидеть все данные о Заказах так же легко как и изменить информацию о них..</p>
 
     </div>
 </div>
@@ -72,8 +72,8 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Generated orders</h1>
-            <p>You can change the order information at any time if it is invalid or delete it.</p>
+            <h1 class="page-header">Сформированные Заказы</h1>
+            <p>Вы можете изменять или удалять записи в любой момент.</p>
         </div>
     </div>
     <!-- /.row -->
@@ -96,17 +96,17 @@
                 <h3>
                     <a>${order.name}</a>
                 </h3>
-                <p><b>Date of dispatch:</b> ${order.dateOfDispatch}</p>
-                <p><b>Date of acceptance:</b> ${order.dateOfAcceptance}</p>
-                <p><b>Order condition:</b> ${order.orderCondition}</p>
-                <p><b>Dispatcher:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
-                <p><b>Point Of Departure:</b> ${order.departureAdress.adress}</p>
-                <p><b>Point Of Delivery:</b> ${order.deliveryAdress.adress}</p>
-                <p><b>Driver name:</b> ${order.driver.name}</p>
+                <p><b>Дата отправки:</b> ${order.dateOfDispatch}</p>
+                <p><b>Дата доставки:</b> ${order.dateOfAcceptance}</p>
+                <p><b>Состояние заказа:</b> ${order.orderCondition}</p>
+                <p><b>Диспетчер:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
+                <p><b>Адрес отправки:</b> ${order.departureAdress.adress}</p>
+                <p><b>Адрес доставки:</b> ${order.deliveryAdress.adress}</p>
+                <p><b>Имя водителя:</b> ${order.driver.name}</p>
 
 
 
-                <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Delete</a></p>
+                <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
         </c:forEach>
     </div>

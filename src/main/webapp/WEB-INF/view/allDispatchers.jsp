@@ -60,9 +60,9 @@
 
 <div class="jumbotron feature">
     <div class="container">
-        <h1>Dispatchers</h1>
-        <p>On this page you can easily view information about dispatchers, as well as add new ones.</p>
-        <p><a class="btn btn-default" onclick="window.location.href = 'addNewDispatcher'">Add new dispatcher</a></p>
+        <h1>Диспетчеры</h1>
+        <p>На этой странице Вы можете увидеть все данные о Диспетчерах так же легко как и изменить информацию о них.</p>
+        <p><a class="btn btn-default" onclick="window.location.href = 'addNewDispatcher'">Добавить нового диспетчера</a></p>
     </div>
 </div>
 
@@ -72,8 +72,8 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Existing dispatchers</h1>
-            <p>You can change the dispatcher information at any time if it is invalid or delete it.</p>
+            <h1 class="page-header">Существующие Диспетчеры</h1>
+            <p>Вы можете изменять или удалять записи в любой момент.</p>
         </div>
     </div>
     <!-- /.row -->
@@ -96,9 +96,9 @@
                 <h3>
                     <a>${disp.surname} ${disp.name}</a>
                 </h3>
-                <p><b>Phone number:</b> ${disp.phoneNumber}</p>
-                <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Update</a></p>
-                <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Delete</a></p>
+                <p><b>Телефонный номер:</b> ${disp.phoneNumber}</p>
+                <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить</a></p>
+                <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
 
         </c:forEach>

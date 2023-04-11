@@ -61,8 +61,7 @@
 
 <div class="jumbotron feature">
     <div class="container">
-        <h1>Add new dispatcher</h1>
-        <p>On this page you can easily add new one.</p>
+        <h1>Добавление нового диспетчера</h1>
 
     </div>
 </div>
@@ -73,8 +72,8 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Main information</h1>
-            <p>Fill information about new dispatcher.</p>
+            <h1 class="page-header">Основная информация</h1>
+            <p>Заполните данные о новом диспетчере.</p>
         </div>
     </div>
     <!-- /.row -->
@@ -86,13 +85,13 @@
 
                 <form:hidden path="id"/>
 
-                Name <form:input path="name"/>
+                Имя <form:input path="name"/>
                 <br><br>
-                Surname<form:input path="surname"/>
+                Фамилия <form:input path="surname"/>
                 <br><br>
-                Phone Number<form:input path="phoneNumber"/>
+                Телефонный номер<form:input path="phoneNumber"/>
                 <br><br>
-                Password <form:input path="password"/>
+                Пароль <form:input path="password"/>
                 <br><br>
 
                 <input type="submit" value="OK"/>

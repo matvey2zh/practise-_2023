@@ -29,6 +29,8 @@
         <span class="icon-bar"></span>
       </button>
 
+
+
     </div>
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="navbar">
@@ -60,12 +62,15 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Cars</h1>
-    <p>On this page you can easily view information about cars, as well as add new ones.</p>
-    <p><a class="btn btn-default" onclick="window.location.href = 'addNewCar'">Add new car</a></p>
+    <h1>Машины</h1>
+    <p>На этой странице Вы можете увидеть все данные Машинах так же легко как и изменить информацию о них..</p>
+    <p><a class="btn btn-default" onclick="window.location.href = 'addNewCar'">Добавить новую машину</a></p>
 
   </div>
 </div>
+
+
+
 
 <!-- Content -->
 <div class="container">
@@ -73,11 +78,13 @@
   <!-- Heading -->
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Existing cars</h1>
-      <p>You can change the cars information at any time if it is invalid or delete it.</p>
+      <h1 class="page-header">Существующие машины</h1>
+      <p>Вы можете изменять или удалять записи в любой момент.</p>
     </div>
   </div>
   <!-- /.row -->
+
+
 
   <!-- Feature Row -->
   <div class="row">
@@ -95,12 +102,12 @@
         <h3>
           <a>${car.id}</a>
         </h3>
-        <p><b>Brand:</b> ${car.brand}</p>
-        <p><b>Model:</b> ${car.model}</p>
-        <p><b>Year of release:</b> ${car.yearOfRelease} year</p>
+        <p><b>Бренд:</b> ${car.brand}</p>
+        <p><b>Модель:</b> ${car.model}</p>
+        <p><b>Год выпуска:</b> ${car.yearOfRelease} year</p>
 
-        <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Update</a></p>
-        <p><a class="btn btn-default" onclick="window.location.href = '${deleteCarButton}'">Delete</a></p>
+        <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить</a></p>
+        <p><a class="btn btn-default" onclick="window.location.href = '${deleteCarButton}'">Удалить</a></p>
 
       </article>
     </c:forEach>
@@ -155,6 +162,8 @@
 
 <!-- Placeholder Images -->
 <script src="js/holder.min.js"></script>
+
+<script src="js/script.js"></script>
 
 </body>
 

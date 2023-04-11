@@ -61,8 +61,7 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Add new car</h1>
-    <p>On this page you can easily add new one.</p>
+    <h1>Добавление новой машины</h1>
 
   </div>
 </div>
@@ -73,8 +72,8 @@
   <!-- Heading -->
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Main information</h1>
-      <p>Fill information about new car.</p>
+      <h1 class="page-header">Основная информация</h1>
+      <p>Заполните данные об новой машине.</p>
     </div>
   </div>
   <!-- /.row -->
@@ -86,11 +85,11 @@
       
       <form:hidden path="id"/>
       
-        Brand <form:input path="brand"/>
+        Бренд <form:input path="brand"/>
       <br><br>
-        Year Of Release <form:input path="yearOfRelease"/>
+        Год выпуска <form:input path="yearOfRelease"/>
       <br><br>
-        Model <form:input path="model"/>
+        Модель <form:input path="model"/>
       <br><br>
       <input type="submit" value="OK"/>
 

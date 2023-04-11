@@ -61,8 +61,7 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Add new car</h1>
-    <p>On this page you can easily add new one.</p>
+    <h1>Выберите машину</h1>
 
   </div>
 </div>
@@ -70,13 +69,7 @@
 <!-- Content -->
 <div class="container">
 
-  <!-- Heading -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Main information</h1>
-      <p>Fill information about new car.</p>
-    </div>
-  </div>
+
   <!-- /.row -->
 
   <!-- Feature Row -->

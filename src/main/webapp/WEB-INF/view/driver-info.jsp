@@ -61,8 +61,7 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Add new driver</h1>
-    <p>On this page you can easily add new one.</p>
+    <h1>Добавление нового водителя</h1>
 
   </div>
 </div>
@@ -73,8 +72,8 @@
   <!-- Heading -->
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Main information</h1>
-      <p>Fill information about new driver.</p>
+      <h1 class="page-header">Основная информация</h1>
+      <p>Заполните информацию о новом водителе.</p>
     </div>
   </div>
   <!-- /.row -->
@@ -85,9 +84,9 @@
       <form:form action="saveDriver" modelAttribute="driver">
 
         <form:hidden path="id"/>
-        Name <form:input path="name"/>
+        Имя <form:input path="name"/>
         <br><br>
-        Work Experience <form:input path="workExperience"/>
+        Стаж Работы <form:input path="workExperience"/>
         <br><br>
 
         <input type="submit" value="OK"/>

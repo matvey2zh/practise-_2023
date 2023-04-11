@@ -61,7 +61,7 @@
 <div class="jumbotron feature">
     <div class="container">
         <h1>Адреса</h1>
-        <p>На этой странице Вы можете увидеть все Адреса так же удобно как и изменить информацию о них.</p>
+        <p>На этой странице Вы можете увидеть все данные об Адресах так же легко как и изменить информацию о них.</p>
         <p><a class="btn btn-default" onclick="window.location.href = 'addNewRoute'">Добавить новый адрес</a></p>
 
     </div>
@@ -95,9 +95,9 @@
 
             <article class="col-md-4 article-intro">
                 <h3>
-                    <a>${route.id}</a>
+                    ${route.adress}
                 </h3>
-                <p><b>Адресс:</b> ${route.adress}</p>
+
 
                 <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>

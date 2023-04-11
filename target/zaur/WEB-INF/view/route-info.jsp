@@ -9,7 +9,7 @@
 
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
     <link href="css/custom.css" rel="stylesheet">
@@ -61,8 +61,7 @@
 
 <div class="jumbotron feature">
     <div class="container">
-        <h1>Add new route</h1>
-        <p>On this page you can easily add new one.</p>
+        <h1>Добавление нового адреса</h1>
 
     </div>
 </div>
@@ -73,8 +72,7 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Main information</h1>
-            <p>Fill information about new route.</p>
+            <p>Введите новый адрес.</p>
         </div>
     </div>
     <!-- /.row -->
@@ -86,7 +84,7 @@
 
                 <form:hidden path="id"/>
 
-                Point Of Departure <form:input path="adress"/>
+                Адрес <form:input path="adress"/>
                 <br><br>
 
                 <input type="submit" value="OK"/>
