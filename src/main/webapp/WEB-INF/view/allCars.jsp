@@ -34,19 +34,19 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav">
         <li>
-          <a  onclick="window.location.href = 'orders'">Orders</a>
+          <a  onclick="window.location.href = 'orders'">Заказы</a>
         </li>
         <li >
-          <a  onclick="window.location.href = 'dispatchers'">Dispatchers</a>
+          <a  onclick="window.location.href = 'dispatchers'">Диспетчеры</a>
         </li>
         <li>
-          <a  onclick="window.location.href = 'drivers'">Drivers</a>
+          <a  onclick="window.location.href = 'drivers'">Водители</a>
         </li>
         <li>
-          <a  onclick="window.location.href = 'routes'">Routes</a>
+          <a  onclick="window.location.href = 'routes'">Адреса</a>
         </li>
         <li class="active">
-          <a  onclick="window.location.href = 'cars'">Cars</a>
+          <a  onclick="window.location.href = 'cars'">Машины</a>
         </li>
       </ul>
 

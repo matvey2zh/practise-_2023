@@ -97,8 +97,7 @@
                 <h3>
                     <a>${route.id}</a>
                 </h3>
-                <p><b>Point Of Departure:</b> ${route.pointOfDeparture}</p>
-                <p><b>Point Of Delivery:</b> ${route.pointOfDelivery}</p>
+                <p><b>Adress:</b> ${route.adress}</p>
 
                 <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Update</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Delete</a></p>

@@ -34,19 +34,19 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a  onclick="window.location.href = 'orders'">Orders</a>
+                    <a  onclick="window.location.href = 'orders'">Заказы</a>
                 </li>
                 <li>
-                    <a  onclick="window.location.href = 'dispatchers'">Dispatchers</a>
+                    <a  onclick="window.location.href = 'dispatchers'">Диспетчеры</a>
                 </li>
                 <li>
-                    <a  onclick="window.location.href = 'drivers'">Drivers</a>
+                    <a  onclick="window.location.href = 'drivers'">Водители</a>
                 </li>
                 <li>
-                    <a  onclick="window.location.href = 'routes'">Routes</a>
+                    <a  onclick="window.location.href = 'routes'">Адреса</a>
                 </li>
                 <li>
-                    <a  onclick="window.location.href = 'cars'">Cars</a>
+                    <a  onclick="window.location.href = 'cars'">Машины</a>
                 </li>
             </ul>
 
@@ -99,9 +99,9 @@
                 <p><b>Date of dispatch:</b> ${order.dateOfDispatch}</p>
                 <p><b>Date of acceptance:</b> ${order.dateOfAcceptance}</p>
                 <p><b>Order condition:</b> ${order.orderCondition}</p>
-                <p><b>Dispatcher full name:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
-                <p><b>Point Of Departure:</b> ${order.route.pointOfDeparture}</p>
-                <p><b>Point Of Delivery:</b> ${order.route.pointOfDelivery}</p>
+                <p><b>Dispatcher:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
+                <p><b>Point Of Departure:</b> ${order.departureAdress.adress}</p>
+                <p><b>Point Of Delivery:</b> ${order.deliveryAdress.adress}</p>
                 <p><b>Driver name:</b> ${order.driver.name}</p>
 
 
