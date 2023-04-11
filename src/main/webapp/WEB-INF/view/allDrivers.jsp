@@ -109,19 +109,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Dispatchers</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all dispatchers and detailed information about them will be indicated.</p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'dispatchers'">To Dispatchers</a></p>
+                    <h3>Диспетчеры</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Диспетчерами, где Вы можете добавлять, изменять и удалять записи.</p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'dispatchers'">К Диспетчерам</a></p>
                 </div>
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Cars</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all cars and detailed information about them will be listed. </p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'cars'">To Cars</a></p>
+                    <h3>Машины</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Машинами, где Вы можете добавлять, изменять и удалять записи. </p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'cars'">К Машинам</a></p>
                 </div>
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Routes</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all routes and detailed information about them will be indicated.</p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'routes'">To Routes</a></p>
+                    <h3>Адреса</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Адресами, где Вы можете добавлять, изменять и удалять записи.</p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'routes'">К Адресам</a></p>
                 </div>
 
             </div>

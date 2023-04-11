@@ -35,19 +35,19 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li>
-                    <a  onclick="window.location.href = 'orders'">Orders</a>
+                    <a  onclick="window.location.href = 'orders'">Заказы</a>
+                </li>
+                <li>
+                    <a  onclick="window.location.href = 'dispatchers'">Диспетчеры</a>
                 </li>
                 <li >
-                    <a  onclick="window.location.href = 'dispatchers'">Dispatchers</a>
+                    <a  onclick="window.location.href = 'drivers'">Водители</a>
+                </li>
+                <li class="active">
+                    <a  onclick="window.location.href = 'routes'">Адерса</a>
                 </li>
                 <li>
-                    <a  onclick="window.location.href = 'drivers'">Drivers</a>
-                </li>
-                <li  class="active">
-                    <a  onclick="window.location.href = 'routes'">Routes</a>
-                </li>
-                <li>
-                    <a  onclick="window.location.href = 'cars'">Cars</a>
+                    <a  onclick="window.location.href = 'cars'">Машины</a>
                 </li>
             </ul>
 
@@ -104,19 +104,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Orders</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all orders and detailed information about them will be indicated.</p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'orders'">To Orders</a></p>
+                    <h3>Диспетчеры</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Диспетчерами, где Вы можете добавлять, изменять и удалять записи.</p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'dispatchers'">К Диспетчерам</a></p>
                 </div>
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Drivers</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all drivers and detailed information about them will be listed. </p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'drivers'">To Drivers</a></p>
+                    <h3>Машины</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Машинами, где Вы можете добавлять, изменять и удалять записи. </p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'cars'">К Машинам</a></p>
                 </div>
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Routes</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all routes and detailed information about them will be indicated.</p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'routes'">To Routes</a></p>
+                    <h3>Заказы</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Заказами, где Вы можете добавлять, изменять и удалять записи.</p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'orders'">К Заказам</a></p>
                 </div>
 
             </div>

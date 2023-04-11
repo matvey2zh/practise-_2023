@@ -113,19 +113,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Orders</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all orders and detailed information about them will be indicated.</p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'orders'">To Orders</a></p>
+                    <h3>Заказы</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Заказами, где Вы можете добавлять, изменять и удалять записи.</p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'orders'">К Заказам</a></p>
                 </div>
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Drivers</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all drivers and detailed information about them will be listed. </p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'drivers'">To Drivers</a></p>
+                    <h3>Водители</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Водителями, где Вы можете добавлять, изменять и удалять записи. </p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'drivers'">К Водителям</a></p>
                 </div>
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Routes</h3>
-                    <p>After clicking on the button below, you will be taken to a page where all routes and detailed information about them will be indicated.</p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'routes'">To Routes</a></p>
+                    <h3>Адреса</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Адресами, где Вы можете добавлять, изменять и удалять записи.</p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'routes'">К Адресам</a></p>
                 </div>
 
             </div>
