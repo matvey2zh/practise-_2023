@@ -86,9 +86,7 @@
 
                 <form:hidden path="id"/>
 
-                Point Of Departure <form:input path="pointOfDeparture"/>
-                <br><br>
-                Point Of Delivery <form:input path="pointOfDelivery"/>
+                Point Of Departure <form:input path="adress"/>
                 <br><br>
 
                 <input type="submit" value="OK"/>

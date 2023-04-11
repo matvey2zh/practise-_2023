@@ -37,9 +37,28 @@ public class Orders {
     private Drivers driver;
 
     @OneToOne
-    @JoinColumn(name = "route_id")
-    private Routes route;
+    @JoinColumn(name = "adress_departure_id")
+    private Routes departureAdress;
 
+    public Routes getDepartureAdress() {
+        return departureAdress;
+    }
+
+    public void setDepartureAdress(Routes departureAdress) {
+        this.departureAdress = departureAdress;
+    }
+
+    public Routes getDeliveryAdress() {
+        return deliveryAdress;
+    }
+
+    public void setDeliveryAdress(Routes deliveryAdress) {
+        this.deliveryAdress = deliveryAdress;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "adress_delivery_id")
+    private Routes deliveryAdress;
 
     public Orders(String name, Date dateOfDispatch, Date dateOfAcceptance, String orderCondition) {
         this.name = name;
@@ -107,11 +126,5 @@ public class Orders {
         this.driver = driver;
     }
 
-    public Routes getRoute() {
-        return route;
-    }
 
-    public void setRoute(Routes route) {
-        this.route = route;
-    }
 }

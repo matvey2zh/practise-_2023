@@ -12,18 +12,14 @@ public class Routes {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "point_of_departure")
-    private String pointOfDeparture;
-
-    @Column(name = "point_of_delivery")
-    private String pointOfDelivery;
+    @Column(name = "adress")
+    private String adress;
 
     public Routes() {
     }
 
-    public Routes(String pointOfDeparture, String pointOfDelivery) {
-        this.pointOfDeparture = pointOfDeparture;
-        this.pointOfDelivery = pointOfDelivery;
+    public Routes(String adress ) {
+        this.adress = adress;
     }
 
     public int getId() {
@@ -34,19 +30,11 @@ public class Routes {
         this.id = id;
     }
 
-    public String getPointOfDeparture() {
-        return pointOfDeparture;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setPointOfDeparture(String pointOfDeparture) {
-        this.pointOfDeparture = pointOfDeparture;
-    }
-
-    public String getPointOfDelivery() {
-        return pointOfDelivery;
-    }
-
-    public void setPointOfDelivery(String pointOfDelivery) {
-        this.pointOfDelivery = pointOfDelivery;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 }

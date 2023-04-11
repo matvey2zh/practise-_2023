@@ -99,9 +99,9 @@
                 <p><b>Date of dispatch:</b> ${order.dateOfDispatch}</p>
                 <p><b>Date of acceptance:</b> ${order.dateOfAcceptance}</p>
                 <p><b>Order condition:</b> ${order.orderCondition}</p>
-                <p><b>Dispatcher full name:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
-                <p><b>Point Of Departure:</b> ${order.route.pointOfDeparture}</p>
-                <p><b>Point Of Delivery:</b> ${order.route.pointOfDelivery}</p>
+                <p><b>Dispatcher:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
+                <p><b>Point Of Departure:</b> ${order.departureAdress.adress}</p>
+                <p><b>Point Of Delivery:</b> ${order.deliveryAdress.adress}</p>
                 <p><b>Driver name:</b> ${order.driver.name}</p>
 
 
