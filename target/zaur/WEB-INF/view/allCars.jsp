@@ -13,7 +13,7 @@
   <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <script src="js/script.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -187,17 +187,7 @@
 </footer>
 
 
-<!-- jQuery -->
-<script src="js/jquery-1.11.3.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- IE10 viewport bug workaround -->
-<script src="js/ie10-viewport-bug-workaround.js"></script>
-
-<!-- Placeholder Images -->
-<script src="js/holder.min.js"></script>
 
 
 

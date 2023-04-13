@@ -12,7 +12,6 @@
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
     <link href="css/custom.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -94,7 +93,7 @@
                 <h3>
                     <a  href="#">${dr.name}</a>
                 </h3>
-                <p><b>Стаж работы:</b> ${dr.workExperience} years</p>
+                <p><b>Стаж работы:</b> ${dr.workExperience} </p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
         </c:forEach>
@@ -149,6 +148,7 @@
 
 <!-- Placeholder Images -->
 <script src="js/holder.min.js"></script>
+
 
 </body>
 
