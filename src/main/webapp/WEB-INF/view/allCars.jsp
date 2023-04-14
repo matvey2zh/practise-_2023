@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html  "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 
   <title></title>
@@ -13,7 +14,7 @@
   <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <script src="script.js" defer></script>
+  <script src="webapp/js/script.js" defer></script>
 </head>
 
 <body>
@@ -70,15 +71,11 @@
   </div>
 </div>
 
-<section class="section">
   <h1 class="section__title">Модальное окно</h1>
   <button class="section__button section__button1">Открыть</button>
-</section>
 
-<section class="section">
-  <h1 class="section__title">Модальное окно</h1>
-  <button class="section__button section__button2">Открыть 2</button>
-</section>
+
+
 
 <div class="modal modal1">
   <div class="modal__main">
@@ -89,23 +86,11 @@
       <p>HTML CSS JavaScript</p>
     </div>
 
-    <button class="modal__btn">Смотреть видео</button>
     <button class="modal__close">&#10006;</button>
   </div>
 </div>
 
-<div class="modal modal2">
-  <div class="modal__main">
-    <h2 class="modal__title">Модальное окно 2</h2>
 
-    <div class="modal__container">
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum doloremque unde perferendis.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea accusantium aperiam, quis commodi incidunt amet quidem vero ut possimus sed veniam aliquam eum, in porro consequuntur impedit deserunt sequi velit quisquam quod suscipit. Consequuntur, facere earum, iusto sit odit aperiam ipsam illo architecto autem esse eos eius maiores quam magnam?</p>
-    </div>
-
-    <button class="modal__close">&#10006;</button>
-  </div>
-</div>
 
 
 <!-- Content -->
