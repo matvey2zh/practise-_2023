@@ -67,12 +67,9 @@
     <h1>Машины</h1>
     <p>На этой странице Вы можете увидеть все данные Машинах так же легко как и изменить информацию о них..</p>
     <p><a class="btn btn-default" onclick="window.location.href = 'addNewCar'">Добавить новую машину</a></p>
-
+    <button class="section__button section__button1">Открыть</button>
   </div>
 </div>
-
-  <h1 class="section__title">Модальное окно</h1>
-  <button class="section__button section__button1">Открыть</button>
 
 
 
