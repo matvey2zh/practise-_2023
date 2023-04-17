@@ -30,3 +30,15 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #fff;
 	padding: 30px 0;
 }
+
+.btn-edit {
+	background-color: black;
+	border: 2px solid black;
+	color: black;
+	font-weight: 700;
+	padding: 10px 20px;
+	cursor: pointer;
+	outline: 2px solid black;
+	outline-offset: 3px;
+	transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}

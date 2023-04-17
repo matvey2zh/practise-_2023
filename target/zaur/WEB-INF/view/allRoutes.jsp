@@ -49,9 +49,6 @@
                     <a  onclick="window.location.href = 'cars'">Машины</a>
                 </li>
             </ul>
-
-
-
         </div>
         <!-- /.navbar-collapse -->
     </div>

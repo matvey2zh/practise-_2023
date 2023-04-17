@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html  "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
@@ -14,7 +15,7 @@
   <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <script type="text/javascript" src="../js/script.js" defer></script>
+
 
 </head>
 
@@ -67,8 +68,7 @@
   <div class="container">
     <h1>Машины</h1>
     <p>На этой странице Вы можете увидеть все данные Машинах так же легко как и изменить информацию о них..</p>
-    <p><a class="btn btn-default" onclick="window.location.href = 'addNewCar'">Добавить новую машину</a></p>
-    <button class="section__button section__button1">Открыть</button>
+    <button class="section__button section__button1" >Добавить новую машину</button>
   </div>
 </div>
 
@@ -79,9 +79,22 @@
   <div class="modal__main">
     <h2 class="modal__title">Модальное окно</h2>
 
-    <div class="modal__container">
-      <p>Сделаем правильно</p>
-      <p>HTML CSS JavaScript</p>
+    <div class="row">
+      <div class="col-lg-12">
+        <form:form action="saveCar" modelAttribute="car">
+
+          <form:hidden path="id"/>
+
+          Бренд <form:input path="brand"/>
+          <br><br>
+          Год выпуска <form:input path="yearOfRelease"/>
+          <br><br>
+          Модель <form:input path="model"/>
+          <br><br>
+          <input type="submit" value="OK"/>
+
+        </form:form>
+      </div>
     </div>
 
     <button class="modal__close">&#10006;</button>
@@ -125,7 +138,7 @@
         <p><b>Модель:</b> ${car.model}</p>
         <p><b>Год выпуска:</b> ${car.yearOfRelease} year</p>
 
-        <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить</a></p>
+        <p><a class="btn-edit section__button1" onclick="window.location.href = '${updateButton}'">Изменить</a></p>
         <p><a class="btn btn-default" onclick="window.location.href = '${deleteCarButton}'">Удалить</a></p>
 
       </article>
@@ -173,6 +186,7 @@
 
 
 
+<script src="js/script.js"></script>
 
 </body>
 

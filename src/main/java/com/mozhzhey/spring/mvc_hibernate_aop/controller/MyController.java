@@ -81,17 +81,18 @@ public class MyController {
         List<Cars> carsList = carService.getAllCars();
         model.addAttribute("cars", carsList);
 
+
+        Cars car = new Cars();
+        model.addAttribute("car", car);
         return "allCars";
     }
 
 
-    @RequestMapping("/addNewCar")
-    public String addNewCar(Model model) {
-        Cars car = new Cars();
-        model.addAttribute("car", car);
-
-        return "car-info";
-    }
+//    @RequestMapping("/addNewCar")
+//    public void addNewCar(Model model) {
+//        Cars car = new Cars();
+//        model.addAttribute("car", car);
+//    }
 
     @RequestMapping("/saveCar")
     public String saveCar(@ModelAttribute("car") Cars car) {
