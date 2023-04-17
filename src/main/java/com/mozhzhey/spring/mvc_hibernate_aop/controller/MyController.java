@@ -88,11 +88,6 @@ public class MyController {
     }
 
 
-//    @RequestMapping("/addNewCar")
-//    public void addNewCar(Model model) {
-//        Cars car = new Cars();
-//        model.addAttribute("car", car);
-//    }
 
     @RequestMapping("/saveCar")
     public String saveCar(@ModelAttribute("car") Cars car) {
@@ -103,12 +98,9 @@ public class MyController {
     }
 
     @RequestMapping("/updateCar")
-    public String updateCar(@RequestParam("carId") int id, Model model) {
+    public void updateCar(@RequestParam("carId") int id, Model model) {
         Cars car = carService.getCar(id);
-
         model.addAttribute("car", car);
-
-        return "car-info";
     }
 
     @RequestMapping("/deleteCar")
