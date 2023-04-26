@@ -61,7 +61,7 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Добавление нового водителя</h1>
+    <h1>Изменение водителя</h1>
 
   </div>
 </div>
@@ -73,7 +73,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Основная информация</h1>
-      <p>Заполните информацию о новом водителе.</p>
+      <p>Заполните информацию о водителе.</p>
     </div>
   </div>
   <!-- /.row -->

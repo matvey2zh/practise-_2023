@@ -61,7 +61,7 @@
 
 <div class="jumbotron feature">
     <div class="container">
-        <h1>Добавление нового адреса</h1>
+        <h1>Изменение адреса</h1>
 
     </div>
 </div>
@@ -72,7 +72,7 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <p>Введите новый адрес.</p>
+            <p>Введите адрес.</p>
         </div>
     </div>
     <!-- /.row -->
