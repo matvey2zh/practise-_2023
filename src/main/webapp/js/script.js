@@ -47,3 +47,8 @@ modalController({
     btnClose: '.modal__close',
 });
 
+modalController({
+    modal: '.modal2',
+    btnOpen: '.section__button2',
+    btnClose: '.modal__close',
+});

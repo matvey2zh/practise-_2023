@@ -58,6 +58,9 @@ public class MyController {
         List<Drivers> driversList = driverService.getAllDrivers();
         model.addAttribute("drivers", driversList);
 
+        Drivers drivers = new Drivers();
+        model.addAttribute("driver",drivers);
+
         return "allDrivers";
     }
 
@@ -121,11 +124,13 @@ public class MyController {
         return "redirect:/cars";
     }
 
-
+    private Drivers newDriver;
     @RequestMapping("/addNewDriver1")
-    public String addNewDriver1(Model model) {
+    public String addNewDriver1(Model model,@ModelAttribute("driver") Drivers driver) {
         List<Cars> carsList = carService.getAllCars();
         model.addAttribute("cars", carsList);
+        newDriver=driver;
+
         return "chooseCarForDriver";
     }
 
@@ -134,13 +139,13 @@ public class MyController {
 
     @RequestMapping("/addNewDriver2")
     public String addNewDriver2(Model model, @RequestParam("selectCarId") int id) {
-        Drivers driver = new Drivers();
         Cars car = carService.getCar(id);
         selectedCar = car;
-        model.addAttribute("driver", driver);
 
-        System.out.println(driver);
-        return "driver-info";
+        newDriver.setDriverCar(selectedCar);
+        driverService.saveDriver(newDriver);
+
+        return "redirect:/drivers";
     }
 
 
