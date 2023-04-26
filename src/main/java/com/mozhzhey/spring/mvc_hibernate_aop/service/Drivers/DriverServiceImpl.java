@@ -32,4 +32,10 @@ public class DriverServiceImpl implements DriverService{
     public void deleteDriver(int id) {
         driversDao.deleteDriver(id);
     }
+
+    @Override
+    @Transactional
+    public Drivers getDriver(int id) {
+        return driversDao.getDriver(id);
+    }
 }

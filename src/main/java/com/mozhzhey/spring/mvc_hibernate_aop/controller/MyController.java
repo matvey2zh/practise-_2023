@@ -129,16 +129,25 @@ public class MyController {
     public String addNewDriver1(Model model,@ModelAttribute("driver") Drivers driver) {
         List<Cars> carsList = carService.getAllCars();
         model.addAttribute("cars", carsList);
+
+        newDriver=driver;
+
+        return "chooseCarForDriver";
+    }
+    @RequestMapping("/editDriver")
+    public String editDriver(Model model,@ModelAttribute("driver1") Drivers driver) {
+        List<Cars> carsList = carService.getAllCars();
+        model.addAttribute("cars", carsList);
+
         newDriver=driver;
 
         return "chooseCarForDriver";
     }
 
-
     private Cars selectedCar;
 
     @RequestMapping("/addNewDriver2")
-    public String addNewDriver2(Model model, @RequestParam("selectCarId") int id) {
+    public String addNewDriver2(@RequestParam("selectCarId") int id) {
         Cars car = carService.getCar(id);
         selectedCar = car;
 
@@ -158,6 +167,13 @@ public class MyController {
         return "redirect:/drivers";
     }
 
+    @RequestMapping("/updateDriver")
+    public String updateDriver(@RequestParam("driverId") int id, Model model) {
+        Drivers drivers = driverService.getDriver(id);
+        model.addAttribute("driver1", drivers);
+
+        return "driver-info";
+    }
     @RequestMapping("/deleteDriver")
     public String deleteDriver(@RequestParam("driverId") int id) {
 

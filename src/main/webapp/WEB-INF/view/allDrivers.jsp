@@ -109,7 +109,9 @@
         <c:forEach var="dr" items="${drivers}">
 
 
-
+            <c:url var="updateButton" value="/updateDriver">
+                <c:param name="driverId" value="${dr.id}"/>
+            </c:url>
 
             <c:url var="deleteButton" value="/deleteDriver">
                 <c:param name="driverId" value="${dr.id}"/>
@@ -121,6 +123,7 @@
                     <a  href="#">${dr.name}</a>
                 </h3>
                 <p><b>Стаж работы:</b> ${dr.workExperience} </p>
+                <p><a class="btn btn-default " onclick="window.location.href = '${updateButton}'">Изменить</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
         </c:forEach>

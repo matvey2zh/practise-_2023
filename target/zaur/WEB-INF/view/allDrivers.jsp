@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <head>
@@ -12,6 +13,7 @@
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -61,10 +63,35 @@
     <div class="container">
         <h1>Водители</h1>
         <p>На этой странице Вы можете увидеть все данные о Водителях так же легко как и изменить информацию о них..</p>
-        <p><a class="btn btn-default" onclick="window.location.href = 'addNewDriver1'">Добавить нового водителя</a></p>
+        <button class="section__button section__button1" >Добавить нового водителя</button>
+
     </div>
 </div>
 
+
+<div class="modal modal1">
+    <div class="modal__main">
+        <h2 class="modal__title">Добавить водителя</h2>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <form:form action="addNewDriver1" modelAttribute="driver">
+
+                    <form:hidden path="id"/>
+                    Имя <form:input path="name"/>
+                    <br><br>
+                    Стаж Работы <form:input path="workExperience"/>
+                    <br><br>
+
+                    <input type="submit" value="OK"/>
+
+                </form:form>
+            </div>
+        </div>
+
+        <button class="modal__close">&#10006;</button>
+    </div>
+</div>
 <!-- Content -->
 <div class="container">
 
@@ -82,7 +109,9 @@
         <c:forEach var="dr" items="${drivers}">
 
 
-
+            <c:url var="updateButton" value="/updateDriver">
+                <c:param name="driverId" value="${dr.id}"/>
+            </c:url>
 
             <c:url var="deleteButton" value="/deleteDriver">
                 <c:param name="driverId" value="${dr.id}"/>
@@ -94,6 +123,7 @@
                     <a  href="#">${dr.name}</a>
                 </h3>
                 <p><b>Стаж работы:</b> ${dr.workExperience} </p>
+                <p><a class="btn btn-default " onclick="window.location.href = '${updateButton}'">Изменить</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
         </c:forEach>
@@ -148,6 +178,7 @@
 
 <!-- Placeholder Images -->
 <script src="js/holder.min.js"></script>
+<script src="js/script.js"></script>
 
 
 </body>

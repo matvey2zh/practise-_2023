@@ -1,6 +1,7 @@
 package com.mozhzhey.spring.mvc_hibernate_aop.dao.Drivers;
 
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
+import com.mozhzhey.spring.mvc_hibernate_aop.entity.Dispatchers;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Drivers;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Orders;
 import org.hibernate.Session;
@@ -38,5 +39,14 @@ public class DriversDaoImpl implements DriversDao{
         Session session = sessionFactory.getCurrentSession();
         Drivers driver = session.get(Drivers.class,id);
         session.delete(driver);
+    }
+
+    @Override
+    public Drivers getDriver(int id) {
+        Session session = sessionFactory.getCurrentSession();
+
+        Drivers drivers = session.get(Drivers.class, id);
+
+        return drivers;
     }
 }

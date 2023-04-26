@@ -81,7 +81,7 @@
   <!-- Feature Row -->
   <div class="row">
     <div class="col-lg-12">
-      <form:form action="saveDriver" modelAttribute="driver">
+      <form:form action="editDriver" modelAttribute="driver1">
 
         <form:hidden path="id"/>
         Имя <form:input path="name"/>

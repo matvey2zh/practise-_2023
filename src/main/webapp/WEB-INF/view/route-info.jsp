@@ -72,7 +72,7 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <p>Введите адрес.</p>
+            <p>Введите адрес</p>
         </div>
     </div>
     <!-- /.row -->
