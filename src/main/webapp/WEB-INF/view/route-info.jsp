@@ -13,6 +13,7 @@
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -72,7 +73,7 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <p>Введите адрес</p>
+            <h1 class="page-header">Основная информация</h1>
         </div>
     </div>
     <!-- /.row -->
@@ -80,13 +81,12 @@
     <!-- Feature Row -->
     <div class="row">
         <div class="col-lg-12">
-            <form:form action="saveRoute" modelAttribute="route">
+            <form:form action="saveRoute" modelAttribute="route" cssClass="form">
 
                 <form:hidden path="id"/>
-
-                Адрес <form:input path="adress"/>
-                <br><br>
-
+                <div class="form__field">
+                 <form:input path="adress" maxlength="15" required="true" placeholder="Адрес" />
+                </div>
                 <input type="submit" value="OK"/>
 
             </form:form>

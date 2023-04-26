@@ -74,7 +74,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Основная информация</h1>
-      <p>Заполните информацию о водителе.</p>
+
     </div>
   </div>
   <!-- /.row -->
@@ -82,7 +82,7 @@
   <!-- Feature Row -->
   <div class="row">
     <div class="col-lg-12">
-      <form:form action="addNewDriver1" modelAttribute="driver" cssClass="form">
+      <form:form action="addNewDriver1" modelAttribute="driver1" cssClass="form">
 
         <form:hidden path="id"/>
 

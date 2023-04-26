@@ -74,7 +74,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Основная информация</h1>
-            <p>Заполните данные о диспетчере.</p>
+
         </div>
     </div>
     <!-- /.row -->

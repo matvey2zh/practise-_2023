@@ -81,16 +81,21 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <form:form action="saveCar" modelAttribute="car">
+        <form:form action="saveCar" modelAttribute="car" cssClass="form">
 
           <form:hidden path="id"/>
+          <div class="form__field">
+          <h3><form:input path="brand" maxlength="15"  required="true" placeholder="Бренд"/></h3>
+          </div>
 
-          <h3>Бренд <form:input path="brand"/></h3>
-          <br><br>
-          <h3>Год выпуска <form:input path="yearOfRelease"/></h3>
-          <br><br>
-          <h3>Модель <form:input path="model"/></h3>
-          <br><br>
+          <div class="form__field">
+          <h3>Год выпуска <form:input path="yearOfRelease"  maxlength="4" minlength="4"/></h3>
+          </div>
+
+          <div class="form__field">
+          <h3><form:input path="model" maxlength="15" required="true" placeholder="Модель"/></h3>
+          </div>
+
           <input class="btn-default" type="submit" value="OK"/>
 
         </form:form>

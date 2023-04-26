@@ -13,6 +13,7 @@
 
   <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
   <link href="css/custom.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -73,7 +74,6 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Основная информация</h1>
-      <p>Заполните данные о машине.</p>
     </div>
   </div>
   <!-- /.row -->
@@ -81,19 +81,24 @@
   <!-- Feature Row -->
   <div class="row">
     <div class="col-lg-12">
-    <form:form action="saveCar" modelAttribute="car">
-      
-      <form:hidden path="id"/>
-      
-        Бренд <form:input path="brand"/>
-      <br><br>
-        Год выпуска <form:input path="yearOfRelease"/>
-      <br><br>
-        Модель <form:input path="model"/>
-      <br><br>
-      <input type="submit" value="OK"/>
+      <form:form action="saveCar" modelAttribute="car" cssClass="form">
 
-    </form:form>
+        <form:hidden path="id"/>
+        <div class="form__field">
+          <h3><form:input path="brand" maxlength="15"  required="true" placeholder="Бренд"/></h3>
+        </div>
+
+        <div class="form__field">
+          <h3>Год выпуска <form:input path="yearOfRelease"  maxlength="4" minlength="4"/></h3>
+        </div>
+
+        <div class="form__field">
+          <h3><form:input path="model" maxlength="15" required="true" placeholder="Модель"/></h3>
+        </div>
+
+        <input class="btn-default" type="submit" value="OK"/>
+
+      </form:form>
     </div>
   </div>
   <!-- /.row -->
