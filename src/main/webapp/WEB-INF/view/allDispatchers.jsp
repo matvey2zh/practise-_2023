@@ -75,18 +75,28 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <form:form action="saveDispatcher" modelAttribute="dispatcher">
+                <form:form action="saveDispatcher" modelAttribute="dispatcher" cssClass="form">
 
+                    <div class="form__field">
                     <form:hidden path="id"/>
+                    </div>
 
-                    Имя <form:input path="name"/>
-                    <br><br>
-                    Фамилия <form:input path="surname"/>
-                    <br><br>
-                    Телефонный номер<form:input path="phoneNumber"/>
-                    <br><br>
-                    Пароль <form:input path="password"/>
-                    <br><br>
+                    <div class="form__field">
+                        <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
+                    </div>
+
+                    <div class="form__field">
+                        <form:input   maxlength="25" required="true" path="surname" placeholder="Фамилия"/>
+                    </div>
+
+                    <div class="form__field">
+                    <form:input type="tel" pattern="\d{12}" minlength="12" maxlength="12" path="phoneNumber" placeholder="Телефон"/>
+                        <span class="form__error">Это поле должно содержать телефон в формате 375291111111</span>
+                    </div>
+
+                    <div class="form__field">
+                        <form:input maxlength="20" minlength="6" required="true" path="password" placeholder="Пароль"/>
+                    </div>
 
                     <input type="submit" value="OK"/>
 

@@ -13,6 +13,7 @@
 
   <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
   <link href="css/custom.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -81,13 +82,16 @@
   <!-- Feature Row -->
   <div class="row">
     <div class="col-lg-12">
-      <form:form action="editDriver" modelAttribute="driver1">
+      <form:form action="addNewDriver1" modelAttribute="driver" cssClass="form">
 
         <form:hidden path="id"/>
-        Имя <form:input path="name"/>
-        <br><br>
-        Стаж Работы <form:input path="workExperience"/>
-        <br><br>
+
+        <div class="form__field">
+          <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
+        </div>
+        <div class="form__field">
+          Стаж Работы <form:input required="true"  min="0" max="30" path="workExperience" placeholder="Стаж Работы" />
+        </div>
 
         <input type="submit" value="OK"/>
 

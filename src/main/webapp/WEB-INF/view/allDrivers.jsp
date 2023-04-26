@@ -75,13 +75,16 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <form:form action="addNewDriver1" modelAttribute="driver">
+                <form:form action="addNewDriver1" modelAttribute="driver" cssClass="form">
 
                     <form:hidden path="id"/>
-                    Имя <form:input path="name"/>
-                    <br><br>
-                    Стаж Работы <form:input path="workExperience"/>
-                    <br><br>
+
+                    <div class="form__field">
+                        <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
+                    </div>
+                    <div class="form__field">
+                    Стаж Работы <form:input required="true"  min="0" max="30" path="workExperience" placeholder="Стаж Работы" />
+                    </div>
 
                     <input type="submit" value="OK"/>
 
@@ -94,7 +97,6 @@
 </div>
 <!-- Content -->
 <div class="container">
-
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">

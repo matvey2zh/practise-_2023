@@ -18,7 +18,7 @@ public class Dispatchers {
     private String surname;
 
     @Column(name = "password")
-    private int password;
+    private String password;
 
     @Column(name = "phone_number")
     private int phoneNumber;
@@ -27,7 +27,7 @@ public class Dispatchers {
     public Dispatchers() {
     }
 
-    public Dispatchers(String name, String surname, int password, int phone_number) {
+    public Dispatchers(String name, String surname, String password, int phone_number) {
         this.name = name;
         this.surname = surname;
         this.password = password;
@@ -58,11 +58,11 @@ public class Dispatchers {
         this.surname = surname;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
