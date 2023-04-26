@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <head>
@@ -12,6 +13,8 @@
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -59,11 +62,33 @@
     <div class="container">
         <h1>Адреса</h1>
         <p>На этой странице Вы можете увидеть все данные об Адресах так же легко как и изменить информацию о них.</p>
-        <p><a class="btn btn-default" onclick="window.location.href = 'addNewRoute'">Добавить новый адрес</a></p>
+        <button class="section__button section__button1" >Добавить новый адрес</button>
+
 
     </div>
 </div>
+<div class="modal modal1">
+    <div class="modal__main">
+        <h2 class="modal__title">Добавить адрес</h2>
 
+        <div class="row">
+            <div class="col-lg-12">
+                <form:form action="saveRoute" modelAttribute="route">
+
+                    <form:hidden path="id"/>
+
+                    Адрес <form:input path="adress"/>
+                    <br><br>
+
+                    <input type="submit" value="OK"/>
+
+                </form:form>
+            </div>
+        </div>
+
+        <button class="modal__close">&#10006;</button>
+    </div>
+</div>
 <!-- Content -->
 <div class="container">
 
@@ -151,6 +176,7 @@
 
 <!-- Placeholder Images -->
 <script src="js/holder.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 

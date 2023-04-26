@@ -77,7 +77,7 @@
 
 <div class="modal modal1">
   <div class="modal__main">
-    <h2 class="modal__title">Модальное окно</h2>
+    <h2 class="modal__title">Добавить машину</h2>
 
     <div class="row">
       <div class="col-lg-12">
@@ -85,13 +85,13 @@
 
           <form:hidden path="id"/>
 
-          Бренд <form:input path="brand"/>
+          <h3>Бренд <form:input path="brand"/></h3>
           <br><br>
-          Год выпуска <form:input path="yearOfRelease"/>
+          <h3>Год выпуска <form:input path="yearOfRelease"/></h3>
           <br><br>
-          Модель <form:input path="model"/>
+          <h3>Модель <form:input path="model"/></h3>
           <br><br>
-          <input type="submit" value="OK"/>
+          <input class="btn-default" type="submit" value="OK"/>
 
         </form:form>
       </div>

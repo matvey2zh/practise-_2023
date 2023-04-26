@@ -29,6 +29,9 @@ public class MyController {
         List<Dispatchers> dispatchersList = dispatcherService.getAllDispatchers();
         model.addAttribute("dispatchers", dispatchersList);
 
+        Dispatchers dispatchers= new Dispatchers();
+        model.addAttribute("dispatcher", dispatchers);
+
         return "allDispatchers";
     }
 
@@ -68,6 +71,10 @@ public class MyController {
         List<Routes> routesList = routeService.getAllRoutes();
         model.addAttribute("routes", routesList);
 
+        Routes routes =  new Routes();
+        model.addAttribute("route", routes);
+
+
         return "allRoutes";
     }
 
@@ -88,11 +95,7 @@ public class MyController {
     }
 
 
-//    @RequestMapping("/addNewCar")
-//    public void addNewCar(Model model) {
-//        Cars car = new Cars();
-//        model.addAttribute("car", car);
-//    }
+
 
     @RequestMapping("/saveCar")
     public String saveCar(@ModelAttribute("car") Cars car) {
@@ -158,12 +161,7 @@ public class MyController {
     }
 
 
-    @RequestMapping("/addNewRoute")
-    public String addNewRoute(Model model) {
-        Routes routes = new Routes();
-        model.addAttribute("route", routes);
-        return "route-info";
-    }
+
 
     @RequestMapping("/saveRoute")
     public String saveRoute(@ModelAttribute("route") Routes routes) {
@@ -186,13 +184,7 @@ public class MyController {
     }
 
 
-    @RequestMapping("/addNewDispatcher")
-    public String addNewDispatcher(Model model) {
-        Dispatchers dispatchers = new Dispatchers();
-        model.addAttribute("dispatcher", dispatchers);
 
-        return "dispatcher-info";
-    }
 
     @RequestMapping("/saveDispatcher")
     public String saveDispatcher(@ModelAttribute("dispatcher") Dispatchers dispatchers) {
