@@ -22,9 +22,6 @@ public class Drivers {
     private Cars driverCar;
 
 
-
-
-
     public Drivers(String name, int workExperience) {
         this.name = name;
         this.workExperience = workExperience;

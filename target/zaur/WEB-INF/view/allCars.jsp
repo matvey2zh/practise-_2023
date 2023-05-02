@@ -144,7 +144,7 @@
         <p><b>Модель:</b> ${car.model}</p>
         <p><b>Год выпуска:</b> ${car.yearOfRelease} year</p>
 
-        <p><a class="btn btn-default " onclick="window.location.href = '${updateButton}'">Изменить</a></p>
+        <p><a class="btn btn-default "  onclick="window.location.href = '${updateButton}'">Изменить</a></p>
         <p><a class="btn btn-default" onclick="window.location.href = '${deleteCarButton}'">Удалить</a></p>
 
       </article>

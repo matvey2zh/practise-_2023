@@ -10,6 +10,8 @@ public interface DriversDao {
 
     public void saveDriver(Drivers driver);
 
+    void updateDriver(Drivers driver);
+
     public void deleteDriver(int id);
 
     Drivers getDriver(int id);

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "dispatchers")
-public class Dispatchers {
+public class Dispatchers implements Comparable<Dispatchers> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,11 @@ public class Dispatchers {
         this.surname = surname;
         this.password = password;
         this.phoneNumber = phone_number;
+    }
+
+    @Override
+    public int compareTo(Dispatchers anotherDispatcher) {
+        return this.name.compareTo(anotherDispatcher.name);
     }
 
     public int getId() {

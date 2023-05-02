@@ -29,6 +29,12 @@ public class DriverServiceImpl implements DriverService{
 
     @Override
     @Transactional
+    public void updateDriver(Drivers driver) {
+        driversDao.updateDriver(driver);
+    }
+
+    @Override
+    @Transactional
     public void deleteDriver(int id) {
         driversDao.deleteDriver(id);
     }

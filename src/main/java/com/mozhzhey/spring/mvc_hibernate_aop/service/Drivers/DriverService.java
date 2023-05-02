@@ -10,6 +10,8 @@ public interface DriverService {
 
     public void saveDriver(Drivers driver);
 
+    void updateDriver(Drivers driver);
+
     public void deleteDriver(int id);
 
     public Drivers getDriver(int id);

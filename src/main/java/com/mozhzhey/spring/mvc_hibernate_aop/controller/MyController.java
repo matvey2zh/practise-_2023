@@ -10,10 +10,9 @@ import com.mozhzhey.spring.mvc_hibernate_aop.service.Routes.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @Controller()
@@ -27,6 +26,7 @@ public class MyController {
     public String showAllDispatchers(Model model) {
 
         List<Dispatchers> dispatchersList = dispatcherService.getAllDispatchers();
+
         model.addAttribute("dispatchers", dispatchersList);
 
         Dispatchers dispatchers= new Dispatchers();
@@ -34,6 +34,12 @@ public class MyController {
 
         return "allDispatchers";
     }
+
+
+
+
+
+
 
 
     @Autowired
@@ -54,8 +60,8 @@ public class MyController {
 
     @RequestMapping("/drivers")
     public String showAllDrivers(Model model) {
-
         List<Drivers> driversList = driverService.getAllDrivers();
+//        Collections.sort(driversList);
         model.addAttribute("drivers", driversList);
 
         Drivers drivers = new Drivers();
@@ -70,13 +76,11 @@ public class MyController {
 
     @RequestMapping("/routes")
     public String showAllRoutes(Model model) {
-
         List<Routes> routesList = routeService.getAllRoutes();
         model.addAttribute("routes", routesList);
 
         Routes routes =  new Routes();
         model.addAttribute("route", routes);
-
 
         return "allRoutes";
     }
@@ -125,6 +129,7 @@ public class MyController {
     }
 
     private Drivers newDriver;
+    private int editedDriverID;
     @RequestMapping("/addNewDriver1")
     public String addNewDriver1(Model model,@ModelAttribute("driver") Drivers driver) {
         List<Cars> carsList = carService.getAllCars();
@@ -134,15 +139,7 @@ public class MyController {
 
         return "chooseCarForDriver";
     }
-    @RequestMapping("/editDriver")
-    public String editDriver(Model model,@ModelAttribute("driver1") Drivers driver) {
-        List<Cars> carsList = carService.getAllCars();
-        model.addAttribute("cars", carsList);
 
-        newDriver=driver;
-
-        return "chooseCarForDriver";
-    }
 
     private Cars selectedCar;
 
@@ -152,14 +149,22 @@ public class MyController {
         selectedCar = car;
 
         newDriver.setDriverCar(selectedCar);
-        driverService.saveDriver(newDriver);
+        driverService.updateDriver(newDriver);
 
         return "redirect:/drivers";
     }
 
+    @RequestMapping("/editDriver")
+    public String editDriver(Model model,@ModelAttribute("driver1") Drivers driver) {
+        List<Cars> carsList = carService.getAllCars();
+        model.addAttribute("cars", carsList);
 
+        newDriver=driver;
+
+        return "chooseCarForDriver";
+    }
     @RequestMapping("/saveDriver")
-    public String saveDriver(@ModelAttribute("driver") Drivers driver) {
+    public String saveDriver(@ModelAttribute("driver1") Drivers driver) {
 
         driver.setDriverCar(selectedCar);
         driverService.saveDriver(driver);

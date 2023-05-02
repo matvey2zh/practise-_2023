@@ -83,7 +83,7 @@
                         <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
                     </div>
                     <div class="form__field">
-                    Стаж Работы <form:input required="true"  min="0" max="30" path="workExperience" placeholder="Стаж Работы" />
+                    Стаж Работы <form:input required="true"  maxlength="2" path="workExperience" placeholder="Стаж Работы" />
                     </div>
 
                     <input type="submit" value="OK"/>

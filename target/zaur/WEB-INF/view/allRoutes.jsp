@@ -73,13 +73,12 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <form:form action="saveRoute" modelAttribute="route">
+                <form:form action="saveRoute" modelAttribute="route" cssClass="form">
 
                     <form:hidden path="id"/>
-
-                    Адрес <form:input path="adress"/>
-                    <br><br>
-
+                    <div class="form__field">
+                        <form:input path="adress" maxlength="15" required="true" placeholder="Адрес" />
+                    </div>
                     <input type="submit" value="OK"/>
 
                 </form:form>
