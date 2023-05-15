@@ -120,8 +120,10 @@
     <div class="col-lg-12">
       <h1 class="page-header">Существующие машины</h1>
       <p>Вы можете изменять или удалять записи в любой момент.</p>
-      <button class="btn btn-default" onclick="window.location.href = 'carsSortByYear'">Cортировать по дате</button>
-      <button class="btn btn-default" onclick="window.location.href = 'carsSortByModel'">Cортировать по модели</button>
+      <button class="btn btn-default" onclick="window.location.href = 'carsSortByYearUp'">Cортировать по дате ↑</button>
+      <button class="btn btn-default" onclick="window.location.href = 'carsSortByYearDown'">Cортировать по дате ↓</button>
+      <button class="btn btn-default" onclick="window.location.href = 'carsSortByModelUp'">Cортировать по модели ↑</button>
+      <button class="btn btn-default" onclick="window.location.href = 'carsSortByModelDown'">Cортировать по модели ↓</button>
     </div>
   </div>
   <!-- /.row -->

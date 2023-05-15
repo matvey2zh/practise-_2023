@@ -30,14 +30,16 @@ public class CarController {
     }
 
 
-    @RequestMapping("/carsSortByYear")
-    public String carsSortByYear(Model model){
+    @RequestMapping("/carsSortByYearUp")
+    public String carsSortByYearUp(Model model){
         List<Cars> carsList = carService.getAllCars();
-        for (int i=1;i<carsList.size();i++){
-            if(carsList.get(i-1).getYearOfRelease()>carsList.get(i).getYearOfRelease()){
-                Cars tmpCar = carsList.get(i-1);
-                carsList.set(i-1,carsList.get(i));
-                carsList.set(i,tmpCar);
+        for (int j = 0; j < carsList.size(); j++) {
+            for (int i = 1; i < carsList.size(); i++) {
+                if (carsList.get(i - 1).getYearOfRelease() > carsList.get(i).getYearOfRelease()) {
+                    Cars tmpCar = carsList.get(i - 1);
+                    carsList.set(i - 1, carsList.get(i));
+                    carsList.set(i, tmpCar);
+                }
             }
         }
         model.addAttribute("cars", carsList);
@@ -47,14 +49,34 @@ public class CarController {
 
     }
 
-    @RequestMapping("/carsSortByModel")
-    public String carsSortByModel(Model model){
+    @RequestMapping("/carsSortByYearDown")
+    public String carsSortByYearDown(Model model){
         List<Cars> carsList = carService.getAllCars();
-        for (int i=1;i<carsList.size();i++){
-            if(carsList.get(i-1).getBrand().toLowerCase().charAt(0)>carsList.get(i).getBrand().toLowerCase().charAt(0)){
-                Cars tmpCar = carsList.get(i-1);
-                carsList.set(i-1,carsList.get(i));
-                carsList.set(i,tmpCar);
+        for (int j = 0; j < carsList.size(); j++) {
+            for (int i = 1; i < carsList.size(); i++) {
+                if (carsList.get(i - 1).getYearOfRelease() < carsList.get(i).getYearOfRelease()) {
+                    Cars tmpCar = carsList.get(i - 1);
+                    carsList.set(i - 1, carsList.get(i));
+                    carsList.set(i, tmpCar);
+                }
+            }
+        }
+        model.addAttribute("cars", carsList);
+        Cars car = new Cars();
+        model.addAttribute("car", car);
+        return "allCars";
+
+    }
+    @RequestMapping("/carsSortByModelUp")
+    public String carsSortByModelUp(Model model){
+        List<Cars> carsList = carService.getAllCars();
+        for (int j = 0; j < carsList.size(); j++) {
+            for (int i = 1; i < carsList.size(); i++) {
+                if (carsList.get(i - 1).getBrand().toLowerCase().charAt(0) > carsList.get(i).getBrand().toLowerCase().charAt(0)) {
+                    Cars tmpCar = carsList.get(i - 1);
+                    carsList.set(i - 1, carsList.get(i));
+                    carsList.set(i, tmpCar);
+                }
             }
         }
         model.addAttribute("cars", carsList);
@@ -64,6 +86,24 @@ public class CarController {
 
     }
 
+    @RequestMapping("/carsSortByModelDown")
+    public String carsSortByModelDown(Model model){
+        List<Cars> carsList = carService.getAllCars();
+        for (int j = 0; j < carsList.size(); j++) {
+            for (int i = 1; i < carsList.size(); i++) {
+                if (carsList.get(i - 1).getBrand().toLowerCase().charAt(0) < carsList.get(i).getBrand().toLowerCase().charAt(0)) {
+                    Cars tmpCar = carsList.get(i - 1);
+                    carsList.set(i - 1, carsList.get(i));
+                    carsList.set(i, tmpCar);
+                }
+            }
+        }
+        model.addAttribute("cars", carsList);
+        Cars car = new Cars();
+        model.addAttribute("car", car);
+        return "allCars";
+
+    }
 
 
 

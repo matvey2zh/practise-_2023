@@ -115,6 +115,8 @@
         <div class="col-lg-12">
             <h1 class="page-header">Существующие Диспетчеры</h1>
             <p>Вы можете изменять или удалять записи в любой момент.</p>
+            <button class="btn btn-default" onclick="window.location.href = 'dispatchersSortBySurnameUp'">Cортировать по фамилии ↑</button>
+            <button class="btn btn-default" onclick="window.location.href = 'dispatchersSortBySurnameDown'">Cортировать по фамилии ↓</button>
         </div>
     </div>
     <!-- /.row -->
