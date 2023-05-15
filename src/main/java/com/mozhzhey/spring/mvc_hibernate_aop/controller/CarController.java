@@ -46,7 +46,6 @@ public class CarController {
         Cars car = new Cars();
         model.addAttribute("car", car);
         return "allCars";
-
     }
 
     @RequestMapping("/carsSortByYearDown")

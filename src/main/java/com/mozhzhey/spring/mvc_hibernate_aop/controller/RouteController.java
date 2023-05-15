@@ -1,5 +1,6 @@
 package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
+import com.mozhzhey.spring.mvc_hibernate_aop.entity.Dispatchers;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Routes;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Routes.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,42 @@ public class RouteController {
 
 
 
+    @RequestMapping("/routesSortUp")
+    public String routesSortUp(Model model){
+        List<Routes> routesList = routeService.getAllRoutes();
+        for (int j = 0; j <routesList.size() ; j++) {
+            for (int i = 1; i < routesList.size(); i++) {
+                if (routesList.get(i - 1).getAdress().toLowerCase().charAt(0) > routesList.get(i).getAdress().toLowerCase().charAt(0)) {
+                    Routes tmpRoute = routesList.get(i - 1);
+                    routesList.set(i - 1, routesList.get(i));
+                    routesList.set(i, tmpRoute);
+                }
+            }
+        }
+        model.addAttribute("routes", routesList);
 
+        Routes routes =  new Routes();
+        model.addAttribute("route", routes);
+        return "allRoutes";
+    }
+    @RequestMapping("/routesSortDown")
+    public String routesSortDown(Model model){
+        List<Routes> routesList = routeService.getAllRoutes();
+        for (int j = 0; j <routesList.size() ; j++) {
+            for (int i = 1; i < routesList.size(); i++) {
+                if (routesList.get(i - 1).getAdress().toLowerCase().charAt(0) < routesList.get(i).getAdress().toLowerCase().charAt(0)) {
+                    Routes tmpRoute = routesList.get(i - 1);
+                    routesList.set(i - 1, routesList.get(i));
+                    routesList.set(i, tmpRoute);
+                }
+            }
+        }
+        model.addAttribute("routes", routesList);
 
+        Routes routes =  new Routes();
+        model.addAttribute("route", routes);
+        return "allRoutes";
+    }
 
 
     @RequestMapping("/saveRoute")

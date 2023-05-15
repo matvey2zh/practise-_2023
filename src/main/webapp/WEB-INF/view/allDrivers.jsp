@@ -102,6 +102,10 @@
         <div class="col-lg-12">
             <h1 class="page-header">Существующие Водители</h1>
             <p>Вы можете изменять или удалять записи в любой момент.</p>
+            <button class="btn btn-default" onclick="window.location.href = 'driversSortByNameUp'">Cортировать по имени ↑</button>
+            <button class="btn btn-default" onclick="window.location.href = 'driversSortByNameDown'">Cортировать по имени ↓</button>
+            <button class="btn btn-default" onclick="window.location.href = 'driversSortByYearUp'">Cортировать по опыту работы ↑</button>
+            <button class="btn btn-default" onclick="window.location.href = 'driversSortByYearDown'">Cортировать по опыту работы ↓</button>
         </div>
     </div>
     <!-- /.row -->

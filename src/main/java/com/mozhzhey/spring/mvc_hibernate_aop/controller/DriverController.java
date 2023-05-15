@@ -2,6 +2,7 @@ package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Drivers;
+import com.mozhzhey.spring.mvc_hibernate_aop.entity.Routes;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Cars.CarService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Drivers.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,4 +91,81 @@ public class DriverController {
         driverService.deleteDriver(id);
         return "redirect:/drivers";
     }
+
+    @RequestMapping("/driversSortByNameUp")
+    public String driversSortByNameUp(Model model){
+        List<Drivers> driversList = driverService.getAllDrivers();
+        for (int j = 0; j <driversList.size() ; j++) {
+            for (int i = 1; i < driversList.size(); i++) {
+                if (driversList.get(i - 1).getName().toLowerCase().charAt(0) > driversList.get(i).getName().toLowerCase().charAt(0)) {
+                    Drivers tmpDriver = driversList.get(i - 1);
+                    driversList.set(i - 1, driversList.get(i));
+                    driversList.set(i, tmpDriver);
+                }
+            }
+        }
+        model.addAttribute("drivers", driversList);
+
+        Drivers drivers = new Drivers();
+        model.addAttribute("driver",drivers);
+
+        return "allDrivers";
+    }
+
+    @RequestMapping("/driversSortByNameDown")
+    public String driversSortByNameDown(Model model){
+        List<Drivers> driversList = driverService.getAllDrivers();
+        for (int j = 0; j <driversList.size() ; j++) {
+            for (int i = 1; i < driversList.size(); i++) {
+                if (driversList.get(i - 1).getName().toLowerCase().charAt(0) < driversList.get(i).getName().toLowerCase().charAt(0)) {
+                    Drivers tmpDriver = driversList.get(i - 1);
+                    driversList.set(i - 1, driversList.get(i));
+                    driversList.set(i, tmpDriver);
+                }
+            }
+        }
+        model.addAttribute("drivers", driversList);
+
+        Drivers drivers = new Drivers();
+        model.addAttribute("driver",drivers);
+
+        return "allDrivers";
+    }
+    @RequestMapping("/driversSortByYearUp")
+    public String driversSortByYearUp(Model model) {
+        List<Drivers> driversList = driverService.getAllDrivers();
+        for (int j = 0; j < driversList.size(); j++) {
+            for (int i = 1; i < driversList.size(); i++) {
+                if (driversList.get(i - 1).getWorkExperience() > driversList.get(i).getWorkExperience()) {
+                    Drivers tmpDriver = driversList.get(i - 1);
+                    driversList.set(i - 1, driversList.get(i));
+                    driversList.set(i, tmpDriver);
+                }
+            }
+        }
+        model.addAttribute("drivers", driversList);
+
+        Drivers drivers = new Drivers();
+        model.addAttribute("driver", drivers);
+        return "allDrivers";
+    }
+    @RequestMapping("/driversSortByYearDown")
+    public String driversSortByYearDown(Model model) {
+        List<Drivers> driversList = driverService.getAllDrivers();
+        for (int j = 0; j < driversList.size(); j++) {
+            for (int i = 1; i < driversList.size(); i++) {
+                if (driversList.get(i - 1).getWorkExperience() < driversList.get(i).getWorkExperience()) {
+                    Drivers tmpDriver = driversList.get(i - 1);
+                    driversList.set(i - 1, driversList.get(i));
+                    driversList.set(i, tmpDriver);
+                }
+            }
+        }
+        model.addAttribute("drivers", driversList);
+
+        Drivers drivers = new Drivers();
+        model.addAttribute("driver", drivers);
+        return "allDrivers";
+    }
+
 }

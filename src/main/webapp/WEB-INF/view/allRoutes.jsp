@@ -96,6 +96,9 @@
         <div class="col-lg-12">
             <h1 class="page-header">Существующие Адреса</h1>
             <p>Вы можете изменять или удалять записи в любой момент</p>
+            <button class="btn btn-default" onclick="window.location.href = 'routesSortUp'">Cортировать ↑</button>
+            <button class="btn btn-default" onclick="window.location.href = 'routesSortDown'">Cортировать ↓</button>
+
         </div>
     </div>
     <!-- /.row -->
