@@ -67,8 +67,10 @@
 <div class="jumbotron feature">
   <div class="container">
     <h1>Машины</h1>
-    <p>На этой странице Вы можете увидеть все данные Машинах так же легко как и изменить информацию о них..</p>
+    <p>На этой странице Вы можете увидеть все данные Машинах так же легко, как и изменить информацию о них..</p>
     <button class="section__button section__button1" >Добавить новую машину</button>
+
+
   </div>
 </div>
 
@@ -118,6 +120,8 @@
     <div class="col-lg-12">
       <h1 class="page-header">Существующие машины</h1>
       <p>Вы можете изменять или удалять записи в любой момент.</p>
+      <button class="btn btn-default" onclick="window.location.href = 'carsSortByYear'">Cортировать по дате</button>
+      <button class="btn btn-default" onclick="window.location.href = 'carsSortByModel'">Cортировать по модели</button>
     </div>
   </div>
   <!-- /.row -->

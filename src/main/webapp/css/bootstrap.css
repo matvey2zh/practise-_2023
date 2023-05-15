@@ -3053,6 +3053,25 @@ a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;
 }
+.btn-sort{
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+.btn-sort:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-sort:focus-visible {
+  outline-color: yellow;
+}
 .btn-default {
   color: #333;
   background-color: #fff;
