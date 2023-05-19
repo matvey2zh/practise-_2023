@@ -5,6 +5,7 @@ import com.mozhzhey.spring.mvc_hibernate_aop.entity.Drivers;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Routes;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Cars.CarService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Drivers.DriverService;
+import com.mozhzhey.spring.mvc_hibernate_aop.service.SearchHelper.SearchHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,14 +26,37 @@ public class DriverController {
         List<Drivers> driversList = driverService.getAllDrivers();
         model.addAttribute("drivers", driversList);
 
-        Drivers drivers = new Drivers();
-        model.addAttribute("driver",drivers);
+        refreshAttributes(model);
 
         return "allDrivers";
     }
     @Autowired
     private CarService carService;
 
+    void refreshAttributes(Model model){
+        SearchHelper searchHelper= new SearchHelper(new String());
+        model.addAttribute("searchInfo",searchHelper);
+        Drivers driver = new Drivers();
+        model.addAttribute("driver", driver);
+    }
+
+    @RequestMapping("/searchInfoInDrivers")
+    public String searchInfoInDrivers(Model model,@ModelAttribute("searchInfo") SearchHelper info){
+        List<Drivers> driversList = driverService.getAllDrivers();
+        for (int j = 0; j < driversList.size(); j++) {
+            for (int i = 0; i < driversList.size(); i++) {
+                if (!driversList.get(i).getName().toLowerCase().contains(info.getInfo().toLowerCase()) &&
+                        !Integer.toString(driversList.get(i).getWorkExperience()).toLowerCase().contains(info.getInfo())) {
+                    driversList.remove(i);
+                }
+
+            }
+        }
+        model.addAttribute("drivers", driversList);
+        refreshAttributes(model);
+        return "allDrivers";
+
+    }
 
     private Drivers newDriver;
     private int editedDriverID;
@@ -106,8 +130,7 @@ public class DriverController {
         }
         model.addAttribute("drivers", driversList);
 
-        Drivers drivers = new Drivers();
-        model.addAttribute("driver",drivers);
+        refreshAttributes(model);
 
         return "allDrivers";
     }
@@ -125,8 +148,8 @@ public class DriverController {
         }
         model.addAttribute("drivers", driversList);
 
-        Drivers drivers = new Drivers();
-        model.addAttribute("driver",drivers);
+        refreshAttributes(model);
+
 
         return "allDrivers";
     }
@@ -144,8 +167,8 @@ public class DriverController {
         }
         model.addAttribute("drivers", driversList);
 
-        Drivers drivers = new Drivers();
-        model.addAttribute("driver", drivers);
+        refreshAttributes(model);
+        ;
         return "allDrivers";
     }
     @RequestMapping("/driversSortByYearDown")
@@ -162,8 +185,8 @@ public class DriverController {
         }
         model.addAttribute("drivers", driversList);
 
-        Drivers drivers = new Drivers();
-        model.addAttribute("driver", drivers);
+        refreshAttributes(model);
+
         return "allDrivers";
     }
 
