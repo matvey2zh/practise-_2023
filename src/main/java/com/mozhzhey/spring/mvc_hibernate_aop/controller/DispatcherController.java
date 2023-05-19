@@ -2,7 +2,9 @@ package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Dispatchers;
+import com.mozhzhey.spring.mvc_hibernate_aop.entity.Drivers;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Dispatcher.DispatcherService;
+import com.mozhzhey.spring.mvc_hibernate_aop.service.SearchHelper.SearchHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +27,7 @@ public class DispatcherController {
 
         model.addAttribute("dispatchers", dispatchersList);
 
-        Dispatchers dispatchers= new Dispatchers();
-        model.addAttribute("dispatcher", dispatchers);
+       refreshAttributes(model);
 
         return "allDispatchers";
     }
@@ -54,6 +55,32 @@ public class DispatcherController {
         return "redirect:/dispatchers";
     }
 
+
+    void refreshAttributes(Model model){
+        SearchHelper searchHelper= new SearchHelper(new String());
+        model.addAttribute("searchInfo",searchHelper);
+        Dispatchers dispatcher = new Dispatchers();
+        model.addAttribute("dispatcher", dispatcher);
+    }
+
+    @RequestMapping("/searchInfoInDispatcher")
+    public String searchInfoInDispatcher(Model model,@ModelAttribute("searchInfo") SearchHelper info){
+        List<Dispatchers> dispatchersList = dispatcherService.getAllDispatchers();
+        for (int j = 0; j < dispatchersList.size(); j++) {
+            for (int i = 0; i < dispatchersList.size(); i++) {
+                if (!dispatchersList.get(i).getName().toLowerCase().contains(info.getInfo().toLowerCase()) && !dispatchersList.get(i).getSurname().toLowerCase().contains(info.getInfo().toLowerCase()))
+                {
+                    dispatchersList.remove(i);
+                }
+
+            }
+        }
+        model.addAttribute("dispatchers", dispatchersList);
+        refreshAttributes(model);
+        return "allDispatchers";
+
+    }
+
     @RequestMapping("/dispatchersSortBySurnameUp")
     public String dispatchersSortBySurnameUp(Model model){
         List<Dispatchers> dispatchersList = dispatcherService.getAllDispatchers();
@@ -68,8 +95,8 @@ public class DispatcherController {
         }
         model.addAttribute("dispatchers", dispatchersList);
 
-        Dispatchers dispatchers= new Dispatchers();
-        model.addAttribute("dispatcher", dispatchers);
+        refreshAttributes(model);
+
         return "allDispatchers";
     }
     @RequestMapping("/dispatchersSortBySurnameDown")
@@ -86,8 +113,8 @@ public class DispatcherController {
         }
         model.addAttribute("dispatchers", dispatchersList);
 
-        Dispatchers dispatchers= new Dispatchers();
-        model.addAttribute("dispatcher", dispatchers);
+        refreshAttributes(model);
+
         return "allDispatchers";
     }
 }
