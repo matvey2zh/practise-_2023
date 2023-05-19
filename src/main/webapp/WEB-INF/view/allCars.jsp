@@ -119,6 +119,11 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Существующие машины</h1>
+      <form:form action="searchInfoInCars" modelAttribute="searchInfo">
+        <form:input path="info"></form:input>
+        <input class="btn-default" type="submit" value="OK"/>
+      </form:form>
+
       <p>Вы можете изменять или удалять записи в любой момент.</p>
       <button class="btn btn-default" onclick="window.location.href = 'carsSortByYearUp'">Cортировать по дате ↑</button>
       <button class="btn btn-default" onclick="window.location.href = 'carsSortByYearDown'">Cортировать по дате ↓</button>

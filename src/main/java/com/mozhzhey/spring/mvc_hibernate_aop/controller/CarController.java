@@ -2,6 +2,7 @@ package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Cars.CarService;
+import com.mozhzhey.spring.mvc_hibernate_aop.service.SearchHelper.SearchHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Controller()
 public class CarController {
@@ -23,12 +25,16 @@ public class CarController {
         List<Cars> carsList = carService.getAllCars();
         model.addAttribute("cars", carsList);
 
-
-        Cars car = new Cars();
-        model.addAttribute("car", car);
+        refreshAttributes(model);
         return "allCars";
     }
 
+    void refreshAttributes(Model model){
+        SearchHelper searchHelper= new SearchHelper(new String());
+        model.addAttribute("searchInfo",searchHelper);
+        Cars car = new Cars();
+        model.addAttribute("car", car);
+    }
 
     @RequestMapping("/carsSortByYearUp")
     public String carsSortByYearUp(Model model){
@@ -43,8 +49,7 @@ public class CarController {
             }
         }
         model.addAttribute("cars", carsList);
-        Cars car = new Cars();
-        model.addAttribute("car", car);
+        refreshAttributes(model);
         return "allCars";
     }
 
@@ -61,8 +66,8 @@ public class CarController {
             }
         }
         model.addAttribute("cars", carsList);
-        Cars car = new Cars();
-        model.addAttribute("car", car);
+        refreshAttributes(model);
+
         return "allCars";
 
     }
@@ -79,8 +84,8 @@ public class CarController {
             }
         }
         model.addAttribute("cars", carsList);
-        Cars car = new Cars();
-        model.addAttribute("car", car);
+        refreshAttributes(model);
+
         return "allCars";
 
     }
@@ -98,12 +103,31 @@ public class CarController {
             }
         }
         model.addAttribute("cars", carsList);
-        Cars car = new Cars();
-        model.addAttribute("car", car);
+        refreshAttributes(model);
         return "allCars";
 
     }
 
+
+
+    @RequestMapping("/searchInfoInCars")
+    public String searchInfoInCars(Model model,@ModelAttribute("searchInfo") SearchHelper info){
+        List<Cars> carsList = carService.getAllCars();
+            for (int i = 0; i < carsList.size(); i++) {
+                if( !carsList.get(i).getBrand().toLowerCase().contains(info.getInfo().toLowerCase()) &&
+                        !carsList.get(i).getModel().toLowerCase().contains(info.getInfo().toLowerCase()) &&
+                        !Integer.toString(carsList.get(i).getYearOfRelease()).toLowerCase().contains(info.getInfo()) ){
+                    carsList.remove(i);
+                    i=0;
+                }
+
+            }
+
+        model.addAttribute("cars", carsList);
+        refreshAttributes(model);
+        return "allCars";
+
+    }
 
 
     @RequestMapping("/saveCar")

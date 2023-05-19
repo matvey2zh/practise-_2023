@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collections;
 import java.util.List;
 
 @Controller()
@@ -22,7 +23,6 @@ public class DriverController {
     @RequestMapping("/drivers")
     public String showAllDrivers(Model model) {
         List<Drivers> driversList = driverService.getAllDrivers();
-//        Collections.sort(driversList);
         model.addAttribute("drivers", driversList);
 
         Drivers drivers = new Drivers();
@@ -111,7 +111,6 @@ public class DriverController {
 
         return "allDrivers";
     }
-
     @RequestMapping("/driversSortByNameDown")
     public String driversSortByNameDown(Model model){
         List<Drivers> driversList = driverService.getAllDrivers();
@@ -167,5 +166,8 @@ public class DriverController {
         model.addAttribute("driver", drivers);
         return "allDrivers";
     }
+
+
+
 
 }
