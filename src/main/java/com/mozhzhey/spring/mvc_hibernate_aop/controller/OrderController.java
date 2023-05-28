@@ -5,6 +5,7 @@ import com.mozhzhey.spring.mvc_hibernate_aop.entity.*;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Dispatcher.DispatcherService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Drivers.DriverService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Order.OrderService;
+import com.mozhzhey.spring.mvc_hibernate_aop.service.Routes.RouteService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.SearchHelper.SearchHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -58,15 +59,36 @@ public class OrderController {
 
         return "choosePages/forOrder/chooseDriverForOrder";
     }
+    @Autowired
+    private RouteService routeService;
     @RequestMapping("/saveDriverForOrder")
     public String saveDriverForOrder(@RequestParam("selectDriverId") int id, Model model) {
         newOrder.setDriver(driverService.getDriver(id));
-        ordersService.updateOrder(newOrder);
-//        List <Drivers> driversList = driverService.getAllDrivers();
-//        model.addAttribute("drivers", driversList);
+//        ordersService.updateOrder(newOrder);
+        List<Routes> routesList = routeService.getAllRoutes();
+        model.addAttribute("routes", routesList);
 
 
-        return "choosePages/forOrder/chooseDriverForOrder";
+        return "choosePages/forOrder/chooseRouteDepartureForOrder";
+    }
+    @RequestMapping("/saveRouteDepartureForOrder")
+    public String saveRouteDepartureForOrder(@RequestParam("selectRouteDepartureId") int id, Model model) {
+        newOrder.setDepartureAdress(routeService.getRoutes(id));
+//        ordersService.updateOrder(newOrder);
+        List<Routes> routesList = routeService.getAllRoutes();
+        model.addAttribute("routes", routesList);
+
+
+        return "choosePages/forOrder/chooseRouteDeliveryForOrder";
+    }
+    @RequestMapping("/saveRouteDeliveryForOrder")
+    public String saveRouteDeliveryForOrder(@RequestParam("selectRouteDepartureId") int id, Model model) {
+        newOrder.setDeliveryAdress(routeService.getRoutes(id));
+//        ordersService.updateOrder(newOrder);
+        ordersService.saveOrder(newOrder);
+
+
+        return "redirect:/orders";
     }
     @RequestMapping("/deleteOrder")
     public String deleteOrder(@RequestParam("orderId") int id) {

@@ -83,14 +83,14 @@
                     </div>
                     <div class="form__field">
                         <h3>Дата отправления</h3>
-                        <form:input type="date" path="dateOfDispatch" />
+                        <form:input type="date" path="dateOfDispatch" required="true" />
                     </div>
                     <div class="form__field">
                         <h3>Дата доставки</h3>
-                        <form:input type="date" path="dateOfAcceptance" />
+                        <form:input type="date" path="dateOfAcceptance" required="true"/>
                     </div>
                     <div class="form__field">
-                        <form:input maxlength="15"  required="true" path="orderCondition" placeholder="Имя"/>
+                        <form:input maxlength="15"  required="true" path="orderCondition" placeholder="Состояние заказа"/>
                     </div>
 
 
