@@ -1,7 +1,5 @@
 package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
-import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
-import com.mozhzhey.spring.mvc_hibernate_aop.entity.Dispatchers;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Routes;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Routes.RouteService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.SearchHelper.SearchHelper;
@@ -27,7 +25,7 @@ public class RouteController {
         refreshAttributes(model);
 
 
-        return "allRoutes";
+        return "mainPages/allRoutes";
     }
 
     void refreshAttributes(Model model){
@@ -50,7 +48,7 @@ public class RouteController {
 
         model.addAttribute("routes", routesList);
         refreshAttributes(model);
-        return "allRoutes";
+        return "mainPages/allRoutes";
 
     }
 
@@ -70,7 +68,7 @@ public class RouteController {
 
         refreshAttributes(model);
 
-        return "allRoutes";
+        return "mainPages/allRoutes";
     }
     @RequestMapping("/routesSortDown")
     public String routesSortDown(Model model){
@@ -88,7 +86,7 @@ public class RouteController {
 
         refreshAttributes(model);
 
-        return "allRoutes";
+        return "mainPages/allRoutes";
     }
 
 
@@ -102,7 +100,7 @@ public class RouteController {
     public String updateRoute(@RequestParam("routeId") int id, Model model) {
         Routes route = routeService.getRoutes(id);
         model.addAttribute("route", route);
-        return "route-info";
+        return "refactorPages/route-info";
     }
 
     @RequestMapping("/deleteRoute")

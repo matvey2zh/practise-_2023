@@ -87,6 +87,10 @@
 
           <form:hidden path="id"/>
           <div class="form__field">
+            <h3><form:input path="govermentNumber" maxlength="8"  required="true" placeholder="Гос номер"/></h3>
+          </div>
+
+          <div class="form__field">
           <h3><form:input path="brand" maxlength="15"  required="true" placeholder="Бренд"/></h3>
           </div>
 
@@ -149,7 +153,7 @@
 
       <article class="col-md-4 article-intro">
         <h3>
-          <a>${car.id}</a>
+          <a>${car.govermentNumber}</a>
         </h3>
         <p><b>Бренд:</b> ${car.brand}</p>
         <p><b>Модель:</b> ${car.model}</p>

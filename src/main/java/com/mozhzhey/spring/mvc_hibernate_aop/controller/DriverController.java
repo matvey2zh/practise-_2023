@@ -2,7 +2,6 @@ package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Drivers;
-import com.mozhzhey.spring.mvc_hibernate_aop.entity.Routes;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Cars.CarService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Drivers.DriverService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.SearchHelper.SearchHelper;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Collections;
 import java.util.List;
 
 @Controller()
@@ -28,7 +26,7 @@ public class DriverController {
 
         refreshAttributes(model);
 
-        return "allDrivers";
+        return "mainPages/allDrivers";
     }
     @Autowired
     private CarService carService;
@@ -54,7 +52,7 @@ public class DriverController {
         }
         model.addAttribute("drivers", driversList);
         refreshAttributes(model);
-        return "allDrivers";
+        return "mainPages/allDrivers";
 
     }
 
@@ -67,7 +65,7 @@ public class DriverController {
 
         newDriver=driver;
 
-        return "chooseCarForDriver";
+        return "choosePages/forDriver/chooseCarForDriver";
     }
 
 
@@ -91,7 +89,7 @@ public class DriverController {
 
         newDriver=driver;
 
-        return "chooseCarForDriver";
+        return "choosePages/forDriver/chooseCarForDriver";
     }
     @RequestMapping("/saveDriver")
     public String saveDriver(@ModelAttribute("driver1") Drivers driver) {
@@ -107,7 +105,7 @@ public class DriverController {
         Drivers drivers = driverService.getDriver(id);
         model.addAttribute("driver1", drivers);
 
-        return "driver-info";
+        return "refactorPages/driver-info";
     }
     @RequestMapping("/deleteDriver")
     public String deleteDriver(@RequestParam("driverId") int id) {
@@ -132,7 +130,7 @@ public class DriverController {
 
         refreshAttributes(model);
 
-        return "allDrivers";
+        return "mainPages/allDrivers";
     }
     @RequestMapping("/driversSortByNameDown")
     public String driversSortByNameDown(Model model){
@@ -151,7 +149,7 @@ public class DriverController {
         refreshAttributes(model);
 
 
-        return "allDrivers";
+        return "mainPages/allDrivers";
     }
     @RequestMapping("/driversSortByYearUp")
     public String driversSortByYearUp(Model model) {
@@ -169,7 +167,7 @@ public class DriverController {
 
         refreshAttributes(model);
         ;
-        return "allDrivers";
+        return "mainPages/allDrivers";
     }
     @RequestMapping("/driversSortByYearDown")
     public String driversSortByYearDown(Model model) {
@@ -187,7 +185,7 @@ public class DriverController {
 
         refreshAttributes(model);
 
-        return "allDrivers";
+        return "mainPages/allDrivers";
     }
 
 

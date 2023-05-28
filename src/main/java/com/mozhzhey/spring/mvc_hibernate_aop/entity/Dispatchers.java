@@ -35,6 +35,17 @@ public class Dispatchers implements Comparable<Dispatchers> {
     }
 
     @Override
+    public String toString() {
+        return "Dispatchers{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                '}';
+    }
+
+    @Override
     public int compareTo(Dispatchers anotherDispatcher) {
         return this.name.compareTo(anotherDispatcher.name);
     }

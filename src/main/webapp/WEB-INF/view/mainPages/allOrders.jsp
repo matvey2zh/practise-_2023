@@ -35,10 +35,10 @@
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li>
+                <li class="active">
                     <a  onclick="window.location.href = 'orders'">Заказы</a>
                 </li>
-                <li class="active">
+                <li>
                     <a  onclick="window.location.href = 'dispatchers'">Диспетчеры</a>
                 </li>
                 <li>
@@ -62,41 +62,37 @@
 
 <div class="jumbotron feature">
     <div class="container">
-        <h1>Диспетчеры</h1>
-        <p>На этой странице Вы можете увидеть все данные о Диспетчерах так же легко как и изменить информацию о них.</p>
-        <button class="section__button section__button1" >Добавить нового диспетчера</button>
-
+        <h1>Заказы</h1>
+        <p>На этой странице Вы можете увидеть все данные о Заказах так же легко как и изменить информацию о них..</p>
+        <button class="section__button section__button1" >Сформировать новый заказ</button>
     </div>
 </div>
 
 <div class="modal modal1">
     <div class="modal__main">
-        <h2 class="modal__title">Добавить диспетчера</h2>
+        <h2 class="modal__title">Сформировать заказ</h2>
 
         <div class="row">
             <div class="col-lg-12">
-                <form:form action="saveDispatcher" modelAttribute="dispatcher" cssClass="form">
+                <form:form action="addNewOrder" modelAttribute="order" cssClass="form">
 
-                    <div class="form__field">
                     <form:hidden path="id"/>
-                    </div>
 
                     <div class="form__field">
                         <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
                     </div>
-
                     <div class="form__field">
-                        <form:input   maxlength="25" required="true" path="surname" placeholder="Фамилия"/>
+                        <h3>Дата отправления</h3>
+                        <form:input type="date" path="dateOfDispatch" />
+                    </div>
+                    <div class="form__field">
+                        <h3>Дата доставки</h3>
+                        <form:input type="date" path="dateOfAcceptance" />
+                    </div>
+                    <div class="form__field">
+                        <form:input maxlength="15"  required="true" path="orderCondition" placeholder="Имя"/>
                     </div>
 
-                    <div class="form__field">
-                    <form:input type="tel"   path="phoneNumber" placeholder="Телефон"/>
-                        <span class="form__error">Это поле должно содержать телефон в формате 375291111111</span>
-                    </div>
-
-                    <div class="form__field">
-                        <form:input maxlength="20" minlength="6" required="true" path="password" placeholder="Пароль"/>
-                    </div>
 
                     <input type="submit" value="OK"/>
 
@@ -113,37 +109,42 @@
     <!-- Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Существующие Диспетчеры</h1>
+            <h1 class="page-header">Сформированные Заказы</h1>
             <p>Вы можете изменять или удалять записи в любой момент.</p>
-            <button class="btn btn-default" onclick="window.location.href = 'dispatchersSortBySurnameUp'">Cортировать по фамилии ↑</button>
-            <button class="btn btn-default" onclick="window.location.href = 'dispatchersSortBySurnameDown'">Cортировать по фамилии ↓</button>
         </div>
     </div>
     <!-- /.row -->
 
-    <!-- Feature Row -->
+
     <div class="row">
-        <c:forEach var="disp" items="${dispatchers}">
-
-            <c:url var="updateButton" value="/updateDispatcher">
-                <c:param name="dispId" value="${disp.id}"/>
-            </c:url>
+        <c:forEach var="order" items="${orders}">
 
 
-            <c:url var="deleteButton" value="/deleteDispatcher">
-                <c:param name="dispId" value="${disp.id}"/>
+
+
+
+
+            <c:url var="deleteButton" value="/deleteOrder">
+                <c:param name="orderId" value="${order.id}"/>
             </c:url>
 
 
             <article class="col-md-4 article-intro">
                 <h3>
-                    <a>${disp.surname} ${disp.name}</a>
+                    <a>${order.name}</a>
                 </h3>
-                <p><b>Телефонный номер:</b> ${disp.phoneNumber}</p>
-                <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить</a></p>
+                <p><b>Дата отправки:</b> ${order.dateOfDispatch}</p>
+                <p><b>Дата доставки:</b> ${order.dateOfAcceptance}</p>
+                <p><b>Состояние заказа:</b> ${order.orderCondition}</p>
+                <p><b>Диспетчер:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
+                <p><b>Адрес отправки:</b> ${order.departureAdress.adress}</p>
+                <p><b>Адрес доставки:</b> ${order.deliveryAdress.adress}</p>
+                <p><b>Имя водителя:</b> ${order.driver.name}</p>
+
+
+
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
-
         </c:forEach>
     </div>
     <!-- /.row -->
@@ -156,9 +157,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 footer-blurb-item">
-                    <h3>Заказы</h3>
-                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Заказами, где Вы можете добавлять, изменять и удалять записи.</p>
-                    <p><a class="btn btn-default" onclick="window.location.href = 'orders'">К Заказам</a></p>
+                    <h3>Диспетчеры</h3>
+                    <p>Нажав на кнопку снизу, Вы попадете на страницу с Диспетчерами, где Вы можете добавлять, изменять и удалять записи.</p>
+                    <p><a class="btn btn-default" onclick="window.location.href = 'dispatchers'">К Диспетчерам</a></p>
                 </div>
                 <div class="col-sm-4 footer-blurb-item">
                     <h3>Водители</h3>

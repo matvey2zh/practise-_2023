@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 @Controller()
 public class CarController {
@@ -26,7 +24,7 @@ public class CarController {
         model.addAttribute("cars", carsList);
 
         refreshAttributes(model);
-        return "allCars";
+        return "mainPages/allCars";
     }
 
     void refreshAttributes(Model model){
@@ -50,7 +48,7 @@ public class CarController {
         }
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
-        return "allCars";
+        return "mainPages/allCars";
     }
 
     @RequestMapping("/carsSortByYearDown")
@@ -68,7 +66,7 @@ public class CarController {
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
 
-        return "allCars";
+        return "mainPages/allCars";
 
     }
     @RequestMapping("/carsSortByModelUp")
@@ -86,7 +84,7 @@ public class CarController {
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
 
-        return "allCars";
+        return "mainPages/allCars";
 
     }
 
@@ -104,7 +102,7 @@ public class CarController {
         }
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
-        return "allCars";
+        return "mainPages/allCars";
 
     }
 
@@ -125,7 +123,7 @@ public class CarController {
 
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
-        return "allCars";
+        return "mainPages/allCars";
 
     }
 
@@ -144,7 +142,7 @@ public class CarController {
 
         model.addAttribute("car", car);
 
-        return "car-info";
+        return "refactorPages/car-info";
     }
 
     @RequestMapping("/deleteCar")

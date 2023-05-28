@@ -19,6 +19,16 @@ public class OrderServiceImpl implements OrderService {
     public List<Orders> getAllOrders() {
         return ordersDAO.getAllOrders();
     }
+    @Override
+    @Transactional
+    public void saveOrder(Orders order) {
+        ordersDAO.saveOrder(order);
+    }
+
+    @Override
+    public void updateOrder(Orders order) {
+        ordersDAO.updateOrder(order);
+    }
 
     @Override
     @Transactional

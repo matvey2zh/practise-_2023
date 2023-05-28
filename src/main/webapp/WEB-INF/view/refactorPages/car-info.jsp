@@ -85,6 +85,10 @@
 
         <form:hidden path="id"/>
         <div class="form__field">
+          <h3><form:input path="govermentNumber" maxlength="8"  required="true" placeholder="Гос номер"/></h3>
+        </div>
+
+        <div class="form__field">
           <h3><form:input path="brand" maxlength="15"  required="true" placeholder="Бренд"/></h3>
         </div>
 

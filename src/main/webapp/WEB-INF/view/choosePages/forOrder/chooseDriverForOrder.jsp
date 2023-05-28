@@ -13,7 +13,6 @@
 
   <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
   <link href="css/custom.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -27,7 +26,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
-        <span class="icon-ba  чщд78r"></span>
+        <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
 
@@ -38,16 +37,16 @@
         <li>
           <a  onclick="window.location.href = 'orders'">Заказы</a>
         </li>
-        <li>
+        <li >
           <a  onclick="window.location.href = 'dispatchers'">Диспетчеры</a>
         </li>
-        <li  class="active">
+        <li>
           <a  onclick="window.location.href = 'drivers'">Водители</a>
         </li>
         <li>
           <a  onclick="window.location.href = 'routes'">Адреса</a>
         </li>
-        <li>
+        <li class="active">
           <a  onclick="window.location.href = 'cars'">Машины</a>
         </li>
       </ul>
@@ -62,7 +61,7 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Изменение водителя</h1>
+    <h1>Выберите водителя</h1>
 
   </div>
 </div>
@@ -70,32 +69,30 @@
 <!-- Content -->
 <div class="container">
 
-  <!-- Heading -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Основная информация</h1>
 
-    </div>
-  </div>
   <!-- /.row -->
 
   <!-- Feature Row -->
   <div class="row">
     <div class="col-lg-12">
-      <form:form action="addNewDriver1" modelAttribute="driver1" cssClass="form">
+      <c:forEach var="dr" items="${drivers}">
 
-        <form:hidden path="id"/>
+        <c:url var="selectButton" value="/saveDriverForOrder">
+          <c:param name="selectDriverId" value="${dr.id}"/>
+        </c:url>
 
-        <div class="form__field">
-          <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
-        </div>
-        <div class="form__field">
-          Стаж Работы <form:input required="true"  maxlength="2" path="workExperience" placeholder="Стаж Работы" />
-        </div>
 
-        <input type="submit" value="OK"/>
+        <article class="col-md-4 article-intro">
+          <h3>
+            <a  href="#">${dr.name}</a>
+          </h3>
+          <p><b>Стаж работы:</b> ${dr.workExperience} </p>
 
-      </form:form>
+          <p><a class="btn btn-default" onclick="window.location.href = '${selectButton}'">Select</a></p>
+        </article>
+
+
+      </c:forEach>
     </div>
   </div>
   <!-- /.row -->
@@ -108,14 +105,14 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 footer-blurb-item">
-          <h3>Диспетчеры</h3>
-          <p>Нажав на кнопку снизу, Вы попадете на страницу с Диспетчерами, где Вы можете добавлять, изменять и удалять записи.</p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'dispatchers'">К Диспетчерам</a></p>
+          <h3>Заказы</h3>
+          <p>Нажав на кнопку снизу, Вы попадете на страницу с Заказами, где Вы можете добавлять, изменять и удалять записи.</p>
+          <p><a class="btn btn-default" onclick="window.location.href = 'orders'">К Заказам</a></p>
         </div>
         <div class="col-sm-4 footer-blurb-item">
-          <h3>Машины</h3>
-          <p>Нажав на кнопку снизу, Вы попадете на страницу с Машинами, где Вы можете добавлять, изменять и удалять записи. </p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'cars'">К Машинам</a></p>
+          <h3>Водители</h3>
+          <p>Нажав на кнопку снизу, Вы попадете на страницу с Водителями, где Вы можете добавлять, изменять и удалять записи. </p>
+          <p><a class="btn btn-default" onclick="window.location.href = 'drivers'">К Водителям</a></p>
         </div>
         <div class="col-sm-4 footer-blurb-item">
           <h3>Адреса</h3>

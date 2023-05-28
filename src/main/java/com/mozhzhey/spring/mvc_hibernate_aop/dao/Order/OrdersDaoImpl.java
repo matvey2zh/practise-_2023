@@ -1,6 +1,5 @@
 package com.mozhzhey.spring.mvc_hibernate_aop.dao.Order;
 
-import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Orders;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,6 +22,18 @@ public class OrdersDaoImpl implements OrdersDAO{
                         Orders.class)
                 .getResultList();
         return ordersList;
+    }
+    @Override
+    public void saveOrder(Orders order) {
+        Session session = sessionFactory.getCurrentSession();
+
+        session.saveOrUpdate(order);
+    }
+
+    @Override
+    public void updateOrder(Orders order) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(order);
     }
 
     @Override

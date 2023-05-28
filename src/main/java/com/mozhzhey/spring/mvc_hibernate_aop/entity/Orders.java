@@ -67,6 +67,21 @@ public class Orders {
         this.orderCondition = orderCondition;
     }
 
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", dateOfDispatch=" + dateOfDispatch +
+                ", dateOfAcceptance=" + dateOfAcceptance +
+                ", orderCondition='" + orderCondition + '\'' +
+                ", dispatcher=" + dispatcher +
+                ", driver=" + driver +
+                ", departureAdress=" + departureAdress +
+                ", deliveryAdress=" + deliveryAdress +
+                '}';
+    }
+
     public Orders() {
     }
 

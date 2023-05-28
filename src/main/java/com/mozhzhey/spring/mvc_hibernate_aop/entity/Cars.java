@@ -20,13 +20,25 @@ public class Cars implements Comparable{
     @Column(name = "model")
     private String model;
 
+    @Column(name = "goverment_number")
+    private String govermentNumber;
+
+    public String getGovermentNumber() {
+        return govermentNumber;
+    }
+
+    public void setGovermentNumber(String govermentNumber) {
+        this.govermentNumber = govermentNumber;
+    }
+
     public Cars() {
     }
 
-    public Cars(String brand, int yearOfRelease, String model) {
+    public Cars(String brand, int yearOfRelease, String model, String govermentNumber) {
         this.brand = brand;
         this.yearOfRelease = yearOfRelease;
         this.model = model;
+        this.govermentNumber = govermentNumber;
     }
 
     public int getId() {

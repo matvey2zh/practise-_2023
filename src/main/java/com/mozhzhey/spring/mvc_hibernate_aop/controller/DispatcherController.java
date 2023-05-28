@@ -1,8 +1,6 @@
 package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
-import com.mozhzhey.spring.mvc_hibernate_aop.entity.Cars;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Dispatchers;
-import com.mozhzhey.spring.mvc_hibernate_aop.entity.Drivers;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Dispatcher.DispatcherService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.SearchHelper.SearchHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +27,7 @@ public class DispatcherController {
 
        refreshAttributes(model);
 
-        return "allDispatchers";
+        return "mainPages/allDispatchers";
     }
     @RequestMapping("/saveDispatcher")
     public String saveDispatcher(@ModelAttribute("dispatcher") Dispatchers dispatchers) {
@@ -45,7 +43,7 @@ public class DispatcherController {
 
         model.addAttribute("dispatcher", dispatchers);
 
-        return "dispatcher-info";
+        return "refactorPages/dispatcher-info";
     }
 
     @RequestMapping("/deleteDispatcher")
@@ -77,7 +75,7 @@ public class DispatcherController {
         }
         model.addAttribute("dispatchers", dispatchersList);
         refreshAttributes(model);
-        return "allDispatchers";
+        return "mainPages/allDispatchers";
 
     }
 
@@ -97,7 +95,7 @@ public class DispatcherController {
 
         refreshAttributes(model);
 
-        return "allDispatchers";
+        return "mainPages/allDispatchers";
     }
     @RequestMapping("/dispatchersSortBySurnameDown")
     public String dispatchersSortBySurnameDown(Model model){
@@ -115,6 +113,6 @@ public class DispatcherController {
 
         refreshAttributes(model);
 
-        return "allDispatchers";
+        return "mainPages/allDispatchers";
     }
 }
