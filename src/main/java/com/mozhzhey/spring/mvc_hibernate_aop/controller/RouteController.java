@@ -25,7 +25,7 @@ public class RouteController {
         refreshAttributes(model);
 
 
-        return "mainPages/allRoutes";
+        return "mainPages/allRoutes.jsp";
     }
 
     void refreshAttributes(Model model){
@@ -48,7 +48,7 @@ public class RouteController {
 
         model.addAttribute("routes", routesList);
         refreshAttributes(model);
-        return "mainPages/allRoutes";
+        return "mainPages/allRoutes.jsp";
 
     }
 
@@ -68,7 +68,7 @@ public class RouteController {
 
         refreshAttributes(model);
 
-        return "mainPages/allRoutes";
+        return "mainPages/allRoutes.jsp";
     }
     @RequestMapping("/routesSortDown")
     public String routesSortDown(Model model){
@@ -86,7 +86,7 @@ public class RouteController {
 
         refreshAttributes(model);
 
-        return "mainPages/allRoutes";
+        return "mainPages/allRoutes.jsp";
     }
 
 
@@ -100,7 +100,7 @@ public class RouteController {
     public String updateRoute(@RequestParam("routeId") int id, Model model) {
         Routes route = routeService.getRoutes(id);
         model.addAttribute("route", route);
-        return "refactorPages/route-info";
+        return "refactorPages/route-info.jsp";
     }
 
     @RequestMapping("/deleteRoute")

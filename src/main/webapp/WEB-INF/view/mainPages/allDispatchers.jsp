@@ -91,7 +91,7 @@
 
                     <div class="form__field">
                     <form:input type="tel"   path="phoneNumber" placeholder="Телефон"/>
-                        <span class="form__error">Это поле должно содержать телефон в формате 375291111111</span>
+                        <span class="form__error">Это поле должно содержать телефон в формате 291111111</span>
                     </div>
 
                     <div class="form__field">

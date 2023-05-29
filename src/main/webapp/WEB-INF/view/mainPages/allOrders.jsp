@@ -50,6 +50,12 @@
                 <li>
                     <a  onclick="window.location.href = 'cars'">Машины</a>
                 </li>
+                <li>
+                    <a  onclick="window.location.href = 'reports'">Отчет</a>
+                </li>
+                <li>
+                    <a  download href="https://drive.google.com/file/d/13H1WOectSHRuA8-tJTAPunncAdEqS7Ig/view?usp=sharing">Справка</a>
+                </li>
             </ul>
 
 

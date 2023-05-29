@@ -52,3 +52,9 @@ modalController({
     btnOpen: '.section__button2',
     btnClose: '.modal__close',
 });
+
+
+
+
+
+

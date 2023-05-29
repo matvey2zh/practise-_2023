@@ -28,7 +28,7 @@ public class OrderController {
 
         refreshAttributes(model);
 
-        return "mainPages/allOrders";
+        return "mainPages/allOrders.jsp";
     }
 
     @Autowired
@@ -43,7 +43,7 @@ public class OrderController {
         model.addAttribute("dispatchers", dispatchersList);
 
 
-        return "choosePages/forOrder/chooseDispatcherForOrder";
+        return "choosePages/forOrder/chooseDispatcherForOrder.jsp";
     }
     @Autowired
     private DriverService driverService;
@@ -57,7 +57,7 @@ public class OrderController {
         System.out.println(newOrder);
 
 
-        return "choosePages/forOrder/chooseDriverForOrder";
+        return "choosePages/forOrder/chooseDriverForOrder.jsp";
     }
     @Autowired
     private RouteService routeService;
@@ -69,7 +69,7 @@ public class OrderController {
         model.addAttribute("routes", routesList);
 
 
-        return "choosePages/forOrder/chooseRouteDepartureForOrder";
+        return "choosePages/forOrder/chooseRouteDepartureForOrder.jsp";
     }
     @RequestMapping("/saveRouteDepartureForOrder")
     public String saveRouteDepartureForOrder(@RequestParam("selectRouteDepartureId") int id, Model model) {
@@ -79,7 +79,7 @@ public class OrderController {
         model.addAttribute("routes", routesList);
 
 
-        return "choosePages/forOrder/chooseRouteDeliveryForOrder";
+        return "choosePages/forOrder/chooseRouteDeliveryForOrder.jsp";
     }
     @RequestMapping("/saveRouteDeliveryForOrder")
     public String saveRouteDeliveryForOrder(@RequestParam("selectRouteDepartureId") int id, Model model) {
@@ -105,5 +105,9 @@ public class OrderController {
         Orders order = new Orders();
         model.addAttribute("order", order);
     }
+    @RequestMapping("/reference")
+    public String reference(Model model) {
 
+        return "mainPages/reference.pdf";
+    }
 }

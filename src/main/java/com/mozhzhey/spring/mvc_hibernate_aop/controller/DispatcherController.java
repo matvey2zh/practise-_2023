@@ -27,14 +27,14 @@ public class DispatcherController {
 
        refreshAttributes(model);
 
-        return "mainPages/allDispatchers";
+        return "mainPages/allDispatchers.jsp";
     }
     @RequestMapping("/saveDispatcher")
     public String saveDispatcher(@ModelAttribute("dispatcher") Dispatchers dispatchers) {
 
         dispatcherService.saveDispatcher(dispatchers);
 
-        return "redirect:/dispatchers";
+        return "redirect:/dispatchers.jsp";
     }
 
     @RequestMapping("/updateDispatcher")
@@ -43,7 +43,7 @@ public class DispatcherController {
 
         model.addAttribute("dispatcher", dispatchers);
 
-        return "refactorPages/dispatcher-info";
+        return "refactorPages/dispatcher-info.jsp";
     }
 
     @RequestMapping("/deleteDispatcher")
@@ -75,7 +75,7 @@ public class DispatcherController {
         }
         model.addAttribute("dispatchers", dispatchersList);
         refreshAttributes(model);
-        return "mainPages/allDispatchers";
+        return "mainPages/allDispatchers.jsp";
 
     }
 
@@ -95,7 +95,7 @@ public class DispatcherController {
 
         refreshAttributes(model);
 
-        return "mainPages/allDispatchers";
+        return "mainPages/allDispatchers.jsp";
     }
     @RequestMapping("/dispatchersSortBySurnameDown")
     public String dispatchersSortBySurnameDown(Model model){
@@ -113,6 +113,6 @@ public class DispatcherController {
 
         refreshAttributes(model);
 
-        return "mainPages/allDispatchers";
+        return "mainPages/allDispatchers.jsp";
     }
 }

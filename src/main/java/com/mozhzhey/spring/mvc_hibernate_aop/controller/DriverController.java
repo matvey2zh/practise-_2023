@@ -26,7 +26,7 @@ public class DriverController {
 
         refreshAttributes(model);
 
-        return "mainPages/allDrivers";
+        return "mainPages/allDrivers.jsp";
     }
     @Autowired
     private CarService carService;
@@ -52,7 +52,7 @@ public class DriverController {
         }
         model.addAttribute("drivers", driversList);
         refreshAttributes(model);
-        return "mainPages/allDrivers";
+        return "mainPages/allDrivers.jsp";
 
     }
 
@@ -65,7 +65,7 @@ public class DriverController {
 
         newDriver=driver;
 
-        return "choosePages/forDriver/chooseCarForDriver";
+        return "choosePages/forDriver/chooseCarForDriver.jsp";
     }
 
 
@@ -89,7 +89,7 @@ public class DriverController {
 
         newDriver=driver;
 
-        return "choosePages/forDriver/chooseCarForDriver";
+        return "choosePages/forDriver/chooseCarForDriver.jsp";
     }
     @RequestMapping("/saveDriver")
     public String saveDriver(@ModelAttribute("driver1") Drivers driver) {
@@ -105,7 +105,7 @@ public class DriverController {
         Drivers drivers = driverService.getDriver(id);
         model.addAttribute("driver1", drivers);
 
-        return "refactorPages/driver-info";
+        return "refactorPages/driver-info.jsp";
     }
     @RequestMapping("/deleteDriver")
     public String deleteDriver(@RequestParam("driverId") int id) {
@@ -130,7 +130,7 @@ public class DriverController {
 
         refreshAttributes(model);
 
-        return "mainPages/allDrivers";
+        return "mainPages/allDrivers.jsp";
     }
     @RequestMapping("/driversSortByNameDown")
     public String driversSortByNameDown(Model model){
@@ -149,7 +149,7 @@ public class DriverController {
         refreshAttributes(model);
 
 
-        return "mainPages/allDrivers";
+        return "mainPages/allDrivers.jsp";
     }
     @RequestMapping("/driversSortByYearUp")
     public String driversSortByYearUp(Model model) {
@@ -167,7 +167,7 @@ public class DriverController {
 
         refreshAttributes(model);
         ;
-        return "mainPages/allDrivers";
+        return "mainPages/allDrivers.jsp";
     }
     @RequestMapping("/driversSortByYearDown")
     public String driversSortByYearDown(Model model) {
@@ -185,7 +185,7 @@ public class DriverController {
 
         refreshAttributes(model);
 
-        return "mainPages/allDrivers";
+        return "mainPages/allDrivers.jsp";
     }
 
 

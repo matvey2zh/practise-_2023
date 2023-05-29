@@ -97,8 +97,8 @@
                 </div>
 
                 <div class="form__field">
-                    <form:input type="tel" pattern="\d{12}" minlength="12" maxlength="12" path="phoneNumber" placeholder="Телефон"/>
-                    <span class="form__error">Это поле должно содержать телефон в формате 375291111111</span>
+                    <form:input type="tel" pattern="\d{9}" minlength="9" maxlength="9" path="phoneNumber" placeholder="Телефон"/>
+                    <span class="form__error">Это поле должно содержать телефон в формате 291111111</span>
                 </div>
 
                 <div class="form__field">

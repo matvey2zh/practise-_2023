@@ -24,7 +24,7 @@ public class CarController {
         model.addAttribute("cars", carsList);
 
         refreshAttributes(model);
-        return "mainPages/allCars";
+        return "mainPages/allCars.jsp";
     }
 
     void refreshAttributes(Model model){
@@ -48,7 +48,7 @@ public class CarController {
         }
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
-        return "mainPages/allCars";
+        return "mainPages/allCars.jsp";
     }
 
     @RequestMapping("/carsSortByYearDown")
@@ -66,7 +66,7 @@ public class CarController {
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
 
-        return "mainPages/allCars";
+        return "mainPages/allCars.jsp";
 
     }
     @RequestMapping("/carsSortByModelUp")
@@ -84,7 +84,7 @@ public class CarController {
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
 
-        return "mainPages/allCars";
+        return "mainPages/allCars.jsp";
 
     }
 
@@ -102,7 +102,7 @@ public class CarController {
         }
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
-        return "mainPages/allCars";
+        return "mainPages/allCars.jsp";
 
     }
 
@@ -123,7 +123,7 @@ public class CarController {
 
         model.addAttribute("cars", carsList);
         refreshAttributes(model);
-        return "mainPages/allCars";
+        return "mainPages/allCars.jsp";
 
     }
 
@@ -142,7 +142,7 @@ public class CarController {
 
         model.addAttribute("car", car);
 
-        return "refactorPages/car-info";
+        return "refactorPages/car-info.jsp";
     }
 
     @RequestMapping("/deleteCar")
