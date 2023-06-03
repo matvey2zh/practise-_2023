@@ -83,8 +83,8 @@
 <div class="container">
 
   <!-- Feature Row -->
-    <table class="table table-bordered table-striped table-responsive-stack"  id="tableOne">
-      <thead class="thead-dark">
+    <table >
+      <thead>
       <tr><th>Номер заказа</th><th>Дата отправки</th><th>Дата доставки</th><th>Водитель</th><th>Машина</th><th>Состояние заказа</th></tr>
       </thead>
     <c:forEach var="order" items="${orders}">
@@ -109,14 +109,13 @@
         </td>
       </tr>
 
-
-
-
-
-
     </c:forEach>
     </table>
   <!-- /.row -->
+
+
+
+
 
 </div>
 <!-- /.container -->
