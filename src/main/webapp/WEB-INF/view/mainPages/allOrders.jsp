@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body onload="setMinAndMaxDate()">
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -59,7 +59,6 @@
             </ul>
 
 
-
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -89,11 +88,11 @@
                     </div>
                     <div class="form__field">
                         <h3>Дата отправления</h3>
-                        <form:input type="date" path="dateOfDispatch" required="true" />
+                        <form:input type="date" id="dateDispatch" path="dateOfDispatch" required="true"  onchange="setRangeToDeliveryDate()" />
                     </div>
                     <div class="form__field">
                         <h3>Дата доставки</h3>
-                        <form:input type="date" path="dateOfAcceptance" required="true"/>
+                        <form:input type="date" id="dateDelivery" path="dateOfAcceptance" required="true" />
                     </div>
                     <div class="form__field">
                         <form:input maxlength="15"  required="true" path="orderCondition" placeholder="Состояние заказа"/>
@@ -204,6 +203,7 @@
 <!-- Placeholder Images -->
 <script src="js/holder.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/orderHelper.js"></script>
 
 </body>
 

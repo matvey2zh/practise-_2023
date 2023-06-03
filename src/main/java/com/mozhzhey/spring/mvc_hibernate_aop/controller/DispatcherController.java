@@ -34,7 +34,7 @@ public class DispatcherController {
 
         dispatcherService.saveDispatcher(dispatchers);
 
-        return "redirect:/dispatchers.jsp";
+        return "redirect:/dispatchers";
     }
 
     @RequestMapping("/updateDispatcher")
