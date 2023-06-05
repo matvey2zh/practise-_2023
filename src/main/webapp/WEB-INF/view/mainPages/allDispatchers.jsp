@@ -90,12 +90,12 @@
                     </div>
 
                     <div class="form__field">
-                    <form:input type="tel"   path="phoneNumber" placeholder="Телефон"/>
+                    <form:input type="number" minlength="9" maxlength="9" path="phoneNumber" min="290000000" max="449999999" placeholder="Телефон"/>
                         <span class="form__error">Это поле должно содержать телефон в формате 291111111</span>
                     </div>
 
                     <div class="form__field">
-                        <form:input maxlength="20" minlength="6" required="true" path="password" placeholder="Пароль"/>
+                        <form:input maxlength="20" minlength="6"  required="true" path="password" placeholder="Пароль"/>
                     </div>
 
                     <input type="submit" value="OK"/>

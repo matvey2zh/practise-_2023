@@ -87,7 +87,7 @@
 
           <form:hidden path="id"/>
           <div class="form__field">
-            <h3><form:input path="govermentNumber" maxlength="8"  required="true" placeholder="Гос номер"/></h3>
+            <h3><form:input path="govermentNumber" minlength="8" maxlength="8"  required="true" placeholder="Гос номер"/></h3>
           </div>
 
           <div class="form__field">
@@ -95,7 +95,7 @@
           </div>
 
           <div class="form__field">
-          <h3>Год выпуска <form:input path="yearOfRelease"  maxlength="4" minlength="4"/></h3>
+          <h3>Год выпуска <form:input path="yearOfRelease"  type="number" min="1985" max="2023" /></h3>
           </div>
 
           <div class="form__field">
