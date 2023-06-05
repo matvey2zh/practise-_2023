@@ -72,7 +72,6 @@
     <h1>Отчеты</h1>
     <p>Выберите отчет</p>
     <button class="section__button " onclick="window.location.href = 'timetable'" >Расписание движения</button>
-    <button class="section__button " onclick="window.location.href = 'routeInfo'" >Информация по маршруту</button>
     <button class="section__button " onclick="window.location.href = 'ordersByOneDriver'" >Кол-во рейсов определенного водителя</button>
 
   </div>

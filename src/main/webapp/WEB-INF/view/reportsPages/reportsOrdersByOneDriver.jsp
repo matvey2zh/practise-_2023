@@ -15,6 +15,7 @@
   <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/tableStyle.css" rel="stylesheet">
 
 
 </head>
@@ -72,7 +73,6 @@
     <h1>Отчеты</h1>
     <p>Выберите отчет</p>
     <button class="section__button " onclick="window.location.href = 'timetable'" >Расписание движения</button>
-    <button class="section__button " onclick="window.location.href = 'routeInfo'" >Информация по маршруту</button>
     <button class="section__button " onclick="window.location.href = 'ordersByOneDriver'" >Кол-во рейсов определенного водителя</button>
     <br>
     <br>
@@ -124,70 +124,52 @@
 
 
 
+<div class="container">
+
+<c:forEach var="helper" items="${reportHelper}">
+
+<article class="col-md-4 article-intro">
+
+    <p><b>Кол-во рейсов:</b> ${helper.amountOfRoutes}</p>
+    <p><b>Кол-во отработанных дней:</b> ${helper.amountOfDaysAll}</p>
+  </article>
+</c:forEach>
   <!-- Feature Row -->
-  <div class="row">
-    <c:forEach var="car" items="${cars}">
+  <table >
+    <thead>
+    <tr><th>Номер заказа</th><th>Дата отправки</th><th>Дата доставки</th><th>Водитель</th><th>Машина</th><th>Состояние заказа</th></tr>
+    </thead>
+    <c:forEach var="order" items="${orders}">
+      <tr>
+        <td>
+          <p>${order.name}</p>
+        </td>
+        <td>
+          <p>${order.dateOfDispatch}</p>
+        </td>
+        <td>
+          <p>${order.dateOfAcceptance}</p>
+        </td>
+        <td>
+          <p>${order.driver.name}</p>
+        </td>
+        <td>
+          <p>${order.driver.driverCar.govermentNumber}</p>
+        </td>
+        <td>
+          <p>${order.orderCondition}</p>
+        </td>
+      </tr>
 
-        <c:url var="updateButton" value="/updateCar">
-            <c:param name="carId" value="${car.id}"/>
-        </c:url>
-
-      <c:url var="deleteCarButton" value="/deleteCar">
-        <c:param name="carId" value="${car.id}"/>
-      </c:url>
-
-      <article class="col-md-4 article-intro">
-        <h3>
-          <a>${car.govermentNumber}</a>
-        </h3>
-        <p><b>Бренд:</b> ${car.brand}</p>
-        <p><b>Модель:</b> ${car.model}</p>
-        <p><b>Год выпуска:</b> ${car.yearOfRelease} year</p>
-
-        <p><a class="btn btn-default "  onclick="window.location.href = '${updateButton}'">Изменить</a></p>
-        <p><a class="btn btn-default" onclick="window.location.href = '${deleteCarButton}'">Удалить</a></p>
-
-      </article>
     </c:forEach>
-  </div>
+  </table>
   <!-- /.row -->
 
+
+
+
+
 </div>
-<!-- /.container -->
-
-<footer>
-  <div class="footer-blurb">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4 footer-blurb-item">
-          <h3>Заказы</h3>
-          <p>Нажав на кнопку снизу, Вы попадете на страницу с Заказами, где Вы можете добавлять, изменять и удалять записи.</p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'orders'">К Заказам</a></p>
-        </div>
-        <div class="col-sm-4 footer-blurb-item">
-          <h3>Водители</h3>
-          <p>Нажав на кнопку снизу, Вы попадете на страницу с Водителями, где Вы можете добавлять, изменять и удалять записи. </p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'drivers'">К Водителям</a></p>
-        </div>
-        <div class="col-sm-4 footer-blurb-item">
-          <h3>Адреса</h3>
-          <p>Нажав на кнопку снизу, Вы попадете на страницу с Адресами, где Вы можете добавлять, изменять и удалять записи.</p>
-          <p><a class="btn btn-default" onclick="window.location.href = 'routes'">К Адресам</a></p>
-        </div>
-
-      </div>
-      <!-- /.row -->
-    </div>
-  </div>
-
-  <div class="small-print">
-    <div class="container">
-      <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
-    </div>
-  </div>
-</footer>
-
-
 
 
 
