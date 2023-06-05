@@ -142,8 +142,8 @@
                 <p><b>Дата доставки:</b> ${order.dateOfAcceptance}</p>
                 <p><b>Состояние заказа:</b> ${order.orderCondition}</p>
                 <p><b>Диспетчер:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
-                <p><b>Адрес отправки:</b> ${order.departureAdress.adress}</p>
-                <p><b>Адрес доставки:</b> ${order.deliveryAdress.adress}</p>
+                <p><b>Адрес отправки:</b> ул. ${order.departureAdress.adress}</p>
+                <p><b>Адрес доставки:</b> ул. ${order.deliveryAdress.adress}</p>
                 <p><b>Имя водителя:</b> ${order.driver.name}</p>
 
 

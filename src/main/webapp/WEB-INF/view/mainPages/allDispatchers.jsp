@@ -144,7 +144,7 @@
                 <h3>
                     <a>${disp.surname} ${disp.name}</a>
                 </h3>
-                <p><b>Телефонный номер:</b> ${disp.phoneNumber}</p>
+                <p><b>Телефонный номер:</b> +375${disp.phoneNumber}</p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>

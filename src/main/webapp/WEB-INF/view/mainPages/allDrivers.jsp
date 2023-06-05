@@ -137,7 +137,7 @@
                 <h3>
                     <a  href="#">${dr.name}</a>
                 </h3>
-                <p><b>Стаж работы:</b> ${dr.workExperience} </p>
+                <p><b>Стаж работы:</b> ${dr.workExperience} years</p>
                 <p><a class="btn btn-default " onclick="window.location.href = '${updateButton}'">Изменить</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
