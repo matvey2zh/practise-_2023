@@ -74,6 +74,10 @@
     <button class="section__button " onclick="window.location.href = 'timetable'" >Расписание движения</button>
     <button class="section__button " onclick="window.location.href = 'routeInfo'" >Информация по маршруту</button>
     <button class="section__button " onclick="window.location.href = 'ordersByOneDriver'" >Кол-во рейсов определенного водителя</button>
+    <br>
+    <br>
+    <button class="section__button section__button1" >Выбрать водителя</button>
+
 
   </div>
 </div>
@@ -81,40 +85,33 @@
 
 
 
-<%--<div class="modal modal1">--%>
-<%--  <div class="modal__main">--%>
-<%--    <h2 class="modal__title">Добавить машину</h2>--%>
 
-<%--    <div class="row">--%>
-<%--      <div class="col-lg-12">--%>
-<%--        <form:form action="saveCar" modelAttribute="car" cssClass="form">--%>
+<div class="modal modal1">
+  <div class="modal__main">
+    <h2 class="modal__title">Выберите водителя</h2>
 
-<%--          <form:hidden path="id"/>--%>
-<%--          <div class="form__field">--%>
-<%--            <h3><form:input path="govermentNumber" maxlength="8"  required="true" placeholder="Гос номер"/></h3>--%>
-<%--          </div>--%>
+    <div class="row">
+      <div class="col-lg-12">
+        <c:forEach var="dr" items="${drivers}">
 
-<%--          <div class="form__field">--%>
-<%--          <h3><form:input path="brand" maxlength="15"  required="true" placeholder="Бренд"/></h3>--%>
-<%--          </div>--%>
 
-<%--          <div class="form__field">--%>
-<%--          <h3>Год выпуска <form:input path="yearOfRelease"  maxlength="4" minlength="4"/></h3>--%>
-<%--          </div>--%>
+          <c:url var="selectButton" value="/selectDriver">
+            <c:param name="driverId" value="${dr.id}"/>
+          </c:url>
+          <article class="col-md-4 article-intro">
+            <h3>
+              <a  href="#">${dr.name}</a>
+            </h3>
+            <p><b>Стаж работы:</b> ${dr.workExperience} years</p>
+            <p><a class="btn btn-default " onclick="window.location.href = '${selectButton}'">Выбрать</a></p>
+          </article>
+        </c:forEach>
+      </div>
+    </div>
 
-<%--          <div class="form__field">--%>
-<%--          <h3><form:input path="model" maxlength="15" required="true" placeholder="Модель"/></h3>--%>
-<%--          </div>--%>
-
-<%--          <input class="btn-default" type="submit" value="OK"/>--%>
-
-<%--        </form:form>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-
-<%--    <button class="modal__close">&#10006;</button>--%>
-<%--  </div>--%>
-<%--</div>--%>
+    <button class="modal__close">&#10006;</button>
+  </div>
+</div>
 
 
 
@@ -122,28 +119,6 @@
 
 <!-- Content -->
 <div class="container">
-  <hr>
-  <h2 class="page-header">ssss</h2>
-  <h2 class="page-header">ssss</h2>
-  <h2 class="page-header">ssss</h2>
-  <h2 class="page-header">ssss</h2>
-  <h2 class="page-header">ssss</h2>
-  <h2 class="page-header">ssss</h2>
-  <!-- Heading -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Существующие машины</h1>
-<%--      <form:form action="searchInfoInCars" modelAttribute="searchInfo">--%>
-<%--        <form:input path="info"></form:input>--%>
-<%--        <input class="btn-default" type="submit" value="OK"/>--%>
-<%--      </form:form>--%>
-
-<%--      <p>Вы можете изменять или удалять записи в любой момент.</p>--%>
-<%--      <button class="btn btn-default" onclick="window.location.href = 'carsSortByYearUp'">Cортировать по дате ↑</button>--%>
-<%--      <button class="btn btn-default" onclick="window.location.href = 'carsSortByYearDown'">Cортировать по дате ↓</button>--%>
-<%--      <button class="btn btn-default" onclick="window.location.href = 'carsSortByModelUp'">Cортировать по модели ↑</button>--%>
-<%--      <button class="btn btn-default" onclick="window.location.href = 'carsSortByModelDown'">Cортировать по модели ↓</button>--%>
-    </div>
   </div>
   <!-- /.row -->
 
@@ -208,7 +183,6 @@
   <div class="small-print">
     <div class="container">
       <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
-      <p>Copyright &copy; Example.com 2015 </p>
     </div>
   </div>
 </footer>

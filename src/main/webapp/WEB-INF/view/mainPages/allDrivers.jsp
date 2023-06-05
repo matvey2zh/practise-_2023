@@ -86,7 +86,7 @@
                         <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
                     </div>
                     <div class="form__field">
-                    Стаж Работы <form:input type="number" required="true" min="0" maxlength="2" path="workExperience" placeholder="Стаж Работы" />
+                    Стаж Работы <form:input type="number" required="true" min="0" max="40" path="workExperience" placeholder="Стаж Работы" />
                     </div>
 
                     <input type="submit" value="OK"/>
@@ -176,7 +176,6 @@
     <div class="small-print">
         <div class="container">
             <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
-            <p>Copyright &copy; Example.com 2015 </p>
         </div>
     </div>
 </footer>

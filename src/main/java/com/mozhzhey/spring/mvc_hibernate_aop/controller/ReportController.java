@@ -1,6 +1,8 @@
 package com.mozhzhey.spring.mvc_hibernate_aop.controller;
 
+import com.mozhzhey.spring.mvc_hibernate_aop.entity.Drivers;
 import com.mozhzhey.spring.mvc_hibernate_aop.entity.Orders;
+import com.mozhzhey.spring.mvc_hibernate_aop.service.Drivers.DriverService;
 import com.mozhzhey.spring.mvc_hibernate_aop.service.Order.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,14 +39,23 @@ public class ReportController {
         model.addAttribute("orders", ordersList);
         return "reportsPages/reportsTimetable.jsp";
     }
+
+    @RequestMapping("/selectDriver")
+    public String selectDriver(Model model){
+
+        return   "redirect:ordersByOneDriver";
+    }
+
+    @Autowired
+    DriverService driverService;
     @RequestMapping("/routeInfo")
     public String routeInfo(Model model){
-
         return "reportsPages/reportsRoutesInfo.jsp";
     }
     @RequestMapping("/ordersByOneDriver")
     public String ordersByOneDriver(Model model){
-
+        List<Drivers> driversList = driverService.getAllDrivers();
+        model.addAttribute("drivers", driversList);
         return "reportsPages/reportsOrdersByOneDriver.jsp";
     }
 }
