@@ -84,7 +84,7 @@
                     <form:hidden path="id"/>
 
                     <div class="form__field">
-                        <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
+                        <form:input maxlength="15"  required="true" path="name" placeholder="Номер заказа №"/>
                     </div>
                     <div class="form__field">
                         <h3>Дата отправления</h3>
@@ -146,7 +146,7 @@
                 <p><b>Диспетчер:</b> ${order.dispatcher.surname} ${order.dispatcher.name}</p>
                 <p><b>Адрес отправки:</b> ул. ${order.departureAdress.adress}</p>
                 <p><b>Адрес доставки:</b> ул. ${order.deliveryAdress.adress}</p>
-                <p><b>Имя водителя:</b> ${order.driver.name}</p>
+                <p><b>Имя водителя:</b> ${order.driver.surname} ${order.driver.name}</p>
 
 
                 <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить состояние</a></p>

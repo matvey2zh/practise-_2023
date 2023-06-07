@@ -86,7 +86,16 @@
                         <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
                     </div>
                     <div class="form__field">
-                    Стаж Работы <form:input type="number" required="true" min="0" max="40" path="workExperience" placeholder="Стаж Работы" />
+                        <form:input maxlength="15"  required="true" path="surname" placeholder="Фамилия"/>
+                    </div>
+                    <div class="form__field">
+                        <form:input maxlength="15"  required="true" path="lastname" placeholder="Отчество"/>
+                    </div>
+                    <div class="form__field">
+                        <form:input maxlength="15"  required="true" path="serviceNumber" placeholder="Табельный номер"/>
+                    </div>
+                    <div class="form__field">
+                        Стаж Работы (года/лет) <form:input type="number" required="true" min="0" max="40" path="workExperience" placeholder="Стаж Работы" />
                     </div>
 
                     <input type="submit" value="OK"/>
@@ -135,9 +144,10 @@
 
             <article class="col-md-4 article-intro">
                 <h3>
-                    <a  href="#">${dr.name}</a>
+                    <a  href="#">${dr.surname} ${dr.name} ${dr.surname}</a>
                 </h3>
                 <p><b>Стаж работы:</b> ${dr.workExperience} years</p>
+                <p><b>Машина:</b> ${dr.driverCar.govermentNumber} </p>
                 <p><a class="btn btn-default " onclick="window.location.href = '${updateButton}'">Изменить</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>

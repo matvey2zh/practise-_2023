@@ -90,7 +90,16 @@
           <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
         </div>
         <div class="form__field">
-          Стаж Работы <form:input required="true"  maxlength="2" path="workExperience" placeholder="Стаж Работы" />
+          <form:input maxlength="15"  required="true" path="surname" placeholder="Фамилия"/>
+        </div>
+        <div class="form__field">
+          <form:input maxlength="15"  required="true" path="lastname" placeholder="Отчество"/>
+        </div>
+        <div class="form__field">
+          <form:input maxlength="15"  required="true" path="serviceNumber" placeholder="Табельный номер"/>
+        </div>
+        <div class="form__field">
+          Стаж Работы <form:input type="number" required="true" min="0" max="40" path="workExperience" placeholder="Стаж Работы" />
         </div>
 
         <input type="submit" value="OK"/>

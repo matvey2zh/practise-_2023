@@ -88,7 +88,9 @@
                     <div class="form__field">
                         <form:input   maxlength="25" required="true" path="surname" placeholder="Фамилия"/>
                     </div>
-
+                    <div class="form__field">
+                        <form:input   maxlength="25" required="true" path="lastname" placeholder="Отчество"/>
+                    </div>
                     <div class="form__field">
                     <form:input type="number" minlength="9" maxlength="9" path="phoneNumber" min="290000000" max="449999999" placeholder="Телефон"/>
                         <span class="form__error">Это поле должно содержать телефон в формате 291111111</span>
@@ -142,7 +144,7 @@
 
             <article class="col-md-4 article-intro">
                 <h3>
-                    <a>${disp.surname} ${disp.name}</a>
+                    <a>${disp.surname} ${disp.name} ${disp.lastname}</a>
                 </h3>
                 <p><b>Телефонный номер:</b> +375${disp.phoneNumber}</p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить</a></p>

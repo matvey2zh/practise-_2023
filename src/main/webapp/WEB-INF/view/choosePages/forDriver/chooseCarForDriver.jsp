@@ -84,10 +84,10 @@
 
         <article class="col-md-4 article-intro">
           <h3>
-            <a>${car.id}</a>
+            <a>${car.govermentNumber}</a>
           </h3>
-          <p><b>Brand:</b> ${car.brand}</p>
-          <p><b>Model:</b> ${car.model}</p>
+          <p><b>Бренд:</b> ${car.brand}</p>
+          <p><b>Модель:</b> ${car.model}</p>
           <p><b>Year of release:</b> ${car.yearOfRelease} year</p>
           <p><a class="btn btn-default" onclick="window.location.href = '${selectButton}'">Select</a></p>
         </article>

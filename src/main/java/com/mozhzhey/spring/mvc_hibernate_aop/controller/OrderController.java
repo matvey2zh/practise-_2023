@@ -12,6 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @Controller()
@@ -52,12 +56,42 @@ public class OrderController {
     public String saveDispatcherForOrder(@RequestParam("selectDispId") int id, Model model) {
         newOrder.setDispatcher(dispatcherService.getDispatcher(id));
 //        ordersService.updateOrder(newOrder);
+        Date startDate = newOrder.getDateOfDispatch();
+        Date endDate = newOrder.getDateOfAcceptance();
+
+
+
+
         List <Drivers> driversList = driverService.getAllDrivers();
-        model.addAttribute("drivers", driversList);
-        System.out.println(newOrder);
+        List <Drivers> tmp = new ArrayList<>();
+            for (int i = 0; i < driversList.size(); i++) {
+                if(isDriverFree(driversList.get(i),startDate,endDate)){
+                   tmp.add(driversList.get(i));
+                }
+            }
+
+
+
+        model.addAttribute("drivers", tmp);
 
 
         return "choosePages/forOrder/chooseDriverForOrder.jsp";
+    }
+
+
+
+    private boolean isDriverFree(Drivers driver, Date startDate, Date endDate){
+        List<Orders> ordersList = ordersService.getAllOrders();
+        for (int i = 0; i < ordersList.size(); i++) {
+            if(ordersList.get(i).getDriver().getId()==driver.getId()) {
+                if(startDate.after(ordersList.get(i).getDateOfAcceptance()) || endDate.before(ordersList.get(i).getDateOfDispatch())){
+
+                }else {
+                    return  false;
+                }
+            }
+        }
+        return true;
     }
     @Autowired
     private RouteService routeService;

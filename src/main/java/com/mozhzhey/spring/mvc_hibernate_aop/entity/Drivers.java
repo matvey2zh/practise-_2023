@@ -13,6 +13,36 @@ public class Drivers {
 
     @Column(name = "name")
     private String name;
+    @Column(name = "surname")
+    private String surname;
+    @Column(name = "lastname")
+    private String lastname;
+    @Column(name = "service_number")
+    private String serviceNumber;
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getServiceNumber() {
+        return serviceNumber;
+    }
+
+    public void setServiceNumber(String serviceNumber) {
+        this.serviceNumber = serviceNumber;
+    }
 
     @Column(name = "work_experience")
     private int workExperience;
@@ -22,9 +52,14 @@ public class Drivers {
     private Cars driverCar;
 
 
-    public Drivers(String name, int workExperience) {
+    public Drivers(int id, String name, String surname, String lastname, String serviceNumber, int workExperience, Cars driverCar) {
+        this.id = id;
         this.name = name;
+        this.surname = surname;
+        this.lastname = lastname;
+        this.serviceNumber = serviceNumber;
         this.workExperience = workExperience;
+        this.driverCar = driverCar;
     }
 
     public Drivers() {

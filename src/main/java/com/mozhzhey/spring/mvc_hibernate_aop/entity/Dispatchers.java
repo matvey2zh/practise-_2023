@@ -16,6 +16,16 @@ public class Dispatchers implements Comparable<Dispatchers> {
 
     @Column(name = "surname")
     private String surname;
+    @Column(name = "lastname")
+    private String lastname;
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
     @Column(name = "password")
     private String password;
@@ -27,11 +37,13 @@ public class Dispatchers implements Comparable<Dispatchers> {
     public Dispatchers() {
     }
 
-    public Dispatchers(String name, String surname, String password, int phone_number) {
+    public Dispatchers(int id, String name, String surname, String lastname, String password, int phoneNumber) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
+        this.lastname = lastname;
         this.password = password;
-        this.phoneNumber = phone_number;
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
