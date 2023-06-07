@@ -125,7 +125,9 @@
         <c:forEach var="order" items="${orders}">
 
 
-
+            <c:url var="updateButton" value="/updateOrderCondition">
+                <c:param name="orderId" value="${order.id}"/>
+            </c:url>
 
 
 
@@ -147,6 +149,7 @@
                 <p><b>Имя водителя:</b> ${order.driver.name}</p>
 
 
+                <p><a class="btn btn-default" onclick="window.location.href = '${updateButton}'">Изменить состояние</a></p>
 
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>

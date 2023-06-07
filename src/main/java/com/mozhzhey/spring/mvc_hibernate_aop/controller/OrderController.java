@@ -96,7 +96,12 @@ public class OrderController {
         ordersService.deleteOrder(id);
         return "redirect:/orders";
     }
+    @RequestMapping("/updateOrderCondition")
+    public String updateOrderCondition(Model model,@RequestParam("orderId") int id){
+        model.addAttribute("order",ordersService.getOrder(id));
 
+        return "/refactorPages/order-info.jsp";
+    }
 
 
     void refreshAttributes(Model model){
@@ -105,9 +110,13 @@ public class OrderController {
         Orders order = new Orders();
         model.addAttribute("order", order);
     }
-    @RequestMapping("/reference")
-    public String reference(Model model) {
 
-        return "mainPages/reference.pdf";
+
+    @RequestMapping("/saveOrder")
+    public String saveOrder(@ModelAttribute("order") Orders order) {
+        Orders tmp = ordersService.getOrder(order.getId());
+        tmp.setOrderCondition(order.getOrderCondition());
+        ordersService.saveOrder(tmp);
+        return "redirect:/orders";
     }
 }
