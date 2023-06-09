@@ -55,12 +55,8 @@ public class OrderController {
     @RequestMapping("/saveDispatcherForOrder")
     public String saveDispatcherForOrder(@RequestParam("selectDispId") int id, Model model) {
         newOrder.setDispatcher(dispatcherService.getDispatcher(id));
-//        ordersService.updateOrder(newOrder);
         Date startDate = newOrder.getDateOfDispatch();
         Date endDate = newOrder.getDateOfAcceptance();
-
-
-
 
         List <Drivers> driversList = driverService.getAllDrivers();
         List <Drivers> tmp = new ArrayList<>();
@@ -70,11 +66,7 @@ public class OrderController {
                 }
             }
 
-
-
         model.addAttribute("drivers", tmp);
-
-
         return "choosePages/forOrder/chooseDriverForOrder.jsp";
     }
 
@@ -85,7 +77,7 @@ public class OrderController {
         for (int i = 0; i < ordersList.size(); i++) {
             if(ordersList.get(i).getDriver().getId()==driver.getId()) {
                 if(startDate.after(ordersList.get(i).getDateOfAcceptance()) || endDate.before(ordersList.get(i).getDateOfDispatch())){
-
+                    continue;
                 }else {
                     return  false;
                 }

@@ -49,6 +49,9 @@
         <li class="active">
           <a  onclick="window.location.href = 'cars'">Машины</a>
         </li>
+        <li >
+          <p id="currentDispatcher"></p>
+        </li>
       </ul>
 
 

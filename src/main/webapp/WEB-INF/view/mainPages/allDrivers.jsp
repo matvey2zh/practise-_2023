@@ -144,10 +144,11 @@
 
             <article class="col-md-4 article-intro">
                 <h3>
-                    <a  href="#">${dr.surname} ${dr.name} ${dr.surname}</a>
+                    <a  href="#">${dr.surname} ${dr.name} ${dr.lastname}</a>
                 </h3>
                 <p><b>Стаж работы:</b> ${dr.workExperience} years</p>
                 <p><b>Машина:</b> ${dr.driverCar.govermentNumber} </p>
+                <p><b>Табельный номер:</b> ${dr.serviceNumber} </p>
                 <p><a class="btn btn-default " onclick="window.location.href = '${updateButton}'">Изменить</a></p>
                 <p><a class="btn btn-default" onclick="window.location.href = '${deleteButton}'">Удалить</a></p>
             </article>
