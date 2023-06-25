@@ -67,16 +67,16 @@
         <form:form action="checkUser" modelAttribute="loginDispatcher" cssClass="form">
 
           <div class="form__field">
-            <form:input maxlength="15"  required="true" path="name" placeholder="Имя"/>
+            <form:input maxlength="15" id="currentName" required="true" path="name" placeholder="Имя"/>
           </div>
 
           <div class="form__field">
-            <form:input   maxlength="25" required="true" path="surname" placeholder="Фамилия"/>
+            <form:input   maxlength="25" id="currentSurname" required="true" path="surname" placeholder="Фамилия"/>
           </div>
           <div class="form__field">
-            <form:input maxlength="20" minlength="6"  required="true" path="password"  placeholder="Пароль"/>
+            <form:password maxlength="20" minlength="6"  required="true" path="password"  placeholder="Пароль"/>
           </div>
-          <input class="btn-default" type="submit" value="OK"/>
+          <input class="btn-default" type="submit" onclick="saveCurrentDispatcher()" value="OK"/>
 
         </form:form>
       </div>
@@ -95,6 +95,7 @@
 
 
 <script src="js/script.js"></script>
+<script src="js/saveCurrentDispatcher.js"></script>
 
 </body>
 

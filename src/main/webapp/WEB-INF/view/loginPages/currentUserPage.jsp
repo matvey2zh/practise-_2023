@@ -48,7 +48,7 @@
 
 <div class="jumbotron feature">
   <div class="container">
-    <h1>Данные неверны</h1>
+    <h1>Выйти из аккаунта?</h1>
     <button class="section__button section__button1" onclick="window.location.href = 'openLoginPage'" >Выйти</button>
 
 

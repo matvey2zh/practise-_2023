@@ -17,7 +17,7 @@
 
 </head>
 
-<body onload="setMinAndMaxDate()">
+<body onload="setMinAndMaxDate();">
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -81,7 +81,6 @@
             <div class="col-lg-12">
                 <form:form action="addNewOrder" modelAttribute="order" cssClass="form">
 
-                    <form:hidden path="id"/>
 
                     <div class="form__field">
                         <form:input maxlength="15"  required="true" path="name" placeholder="Номер заказа №"/>
@@ -95,7 +94,6 @@
                         <form:input type="date" id="dateDelivery" path="dateOfAcceptance" required="true" />
                     </div>
                     <div class="form__field">
-                        <form:input maxlength="15"  required="true" path="orderCondition" placeholder="Состояние заказа"/>
                     </div>
 
 
@@ -206,6 +204,7 @@
 <script src="js/holder.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/orderHelper.js"></script>
+<script src="js/saveCurrentDispatcher.js"></script>
 
 </body>
 

@@ -14,9 +14,11 @@
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script>
+    </script>
 </head>
 
-<body>
+<body >
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -129,7 +131,7 @@
     <!-- /.row -->
 
     <!-- Feature Row -->
-    <div class="row">
+    <div class="row" >
         <c:forEach var="dr" items="${drivers}">
 
 
@@ -146,7 +148,7 @@
                 <h3>
                     <a  href="#">${dr.surname} ${dr.name} ${dr.lastname}</a>
                 </h3>
-                <p><b>Стаж работы:</b> ${dr.workExperience} years</p>
+                <p><b>Стаж работы:</b> ${dr.workExperience} years </p>
                 <p><b>Машина:</b> ${dr.driverCar.govermentNumber} </p>
                 <p><b>Табельный номер:</b> ${dr.serviceNumber} </p>
                 <p><a class="btn btn-default " onclick="window.location.href = '${updateButton}'">Изменить</a></p>
@@ -204,6 +206,7 @@
 <!-- Placeholder Images -->
 <script src="js/holder.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/helpOutputYear.js"></script>
 
 
 </body>

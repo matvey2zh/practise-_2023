@@ -54,9 +54,7 @@
         <li class="active">
           <a  onclick="window.location.href = 'cars'">Машины</a>
         </li>
-        <li>
-          <a  onclick="window.location.href = 'currentUserPage'" id="currentDispatcher">tmp</a>
-        </li>
+
       </ul>
 
 

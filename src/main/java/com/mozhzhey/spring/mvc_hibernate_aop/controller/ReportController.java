@@ -66,12 +66,12 @@ public class ReportController {
         int amount=0;
         LocalDate startDate;
         LocalDate endDate;
-//        for (int i = 0; i < ordersList.size(); i++) {
-//            startDate=LocalDate.of(ordersList.get(i).getDateOfDispatch().getYear(),ordersList.get(i).getDateOfDispatch().getMonth(),ordersList.get(i).getDateOfDispatch().getDay());
-//            endDate=LocalDate.of(ordersList.get(i).getDateOfAcceptance().getYear(),ordersList.get(i).getDateOfAcceptance().,ordersList.get(i).getDateOfAcceptance().getDay());
-//            amount+= ChronoUnit.DAYS.between(startDate, endDate);
-//
-//        }
+        for (int i = 0; i < ordersList.size(); i++) {
+            startDate=LocalDate.of(ordersList.get(i).getDateOfDispatch().getYear(),ordersList.get(i).getDateOfDispatch().getMonth(),ordersList.get(i).getDateOfDispatch().getDay());
+            endDate=LocalDate.of(ordersList.get(i).getDateOfAcceptance().getYear(),ordersList.get(i).getDateOfAcceptance().getMonth(),ordersList.get(i).getDateOfAcceptance().getDay());
+            amount+= ChronoUnit.DAYS.between(startDate, endDate);
+
+        }
         helper.setAmountOfDaysAll(amount);
         helper.setAmountOfRoutes(ordersList.size());
         helper.setAmountOfDaysLastMonth(ordersList.size());

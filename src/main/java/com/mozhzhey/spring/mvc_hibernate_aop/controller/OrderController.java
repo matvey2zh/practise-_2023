@@ -41,14 +41,17 @@ public class OrderController {
     @RequestMapping("/addNewOrder")
     public String addNewOrder(Model model, @ModelAttribute("order") Orders order) {
         newOrder = order;
+        newOrder.setOrderCondition("Сформирован");
         System.out.println(newOrder);
         List<Dispatchers> dispatchersList = dispatcherService.getAllDispatchers();
 
         model.addAttribute("dispatchers", dispatchersList);
 
-
         return "choosePages/forOrder/chooseDispatcherForOrder.jsp";
     }
+
+
+
     @Autowired
     private DriverService driverService;
 

@@ -50,8 +50,10 @@
                 <li>
                     <a  onclick="window.location.href = 'cars'">Машины</a>
                 </li>
+                <li>
+                    <a  onclick="window.location.href = 'currentUserPage'" id="currentDispatcher">Выйти из аккаунта</a>
+                </li>
             </ul>
-
 
 
         </div>
@@ -203,6 +205,7 @@
 <!-- Placeholder Images -->
 <script src="js/holder.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/saveCurrentDispatcher.js"></script>
 
 </body>
 
